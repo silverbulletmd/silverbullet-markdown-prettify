@@ -6,7 +6,7 @@ See [MarkdownPrettify.md](./MarkdownPrettify.md) for a full description of the r
 
 ## Install
 
-In SilverBullet, run `Library: Install` and paste the URL to `MarkdownPrettify.md` in this repo.
+In SilverBullet, run `Library: Install` and paste the URL to `Prettify.md` in this repo.
 
 ## Build
 
