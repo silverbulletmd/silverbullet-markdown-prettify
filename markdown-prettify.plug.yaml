@@ -1,0 +1,10 @@
+name: markdown-prettify
+functions:
+  prettify:
+    path: prettify.ts:prettifyCommand
+    command:
+      name: "Markdown: Prettify"
+      key: "Ctrl-Alt-p"
+      mac: "Cmd-Alt-p"
+      requireEditor: page
+      requireMode: rw

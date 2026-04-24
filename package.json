@@ -1,0 +1,16 @@
+{
+  "name": "silverbullet-markdown-prettify",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "npx plug-compile markdown-prettify.plug.yaml"
+  },
+  "dependencies": {
+    "@silverbulletmd/silverbullet": ">=2.5.3",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "vitest": "^2.0.0"
+  }
+}
