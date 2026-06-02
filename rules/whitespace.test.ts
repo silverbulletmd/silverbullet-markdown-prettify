@@ -53,6 +53,39 @@ describe("unwrapSoftWrappedParagraphs", () => {
     expect(renderToText(root)).toBe("line one line two\n");
   });
 
+  test("reflows a soft wrap at a text-node boundary before inline markup", () => {
+    // Mirrors the real parse tree: inline markup (**bold**) splits a
+    // paragraph into multiple children, so the soft-wrap newline lands at
+    // the end of an earlier text node rather than the final one.
+    const para: ParseTree = {
+      type: "Paragraph",
+      children: [
+        { text: "the canonical implementation living in\n" },
+        { type: "StrongEmphasis", children: [{ text: "**Core**" }] },
+        { text: " and the rest\n" },
+      ],
+    };
+    const root: ParseTree = { children: [para] };
+    unwrapSoftWrappedParagraphs(root);
+    expect(renderToText(root)).toBe(
+      "the canonical implementation living in **Core** and the rest\n",
+    );
+  });
+
+  test("preserves a hard break before inline markup", () => {
+    const para: ParseTree = {
+      type: "Paragraph",
+      children: [
+        { text: "keep this break  \n" },
+        { type: "StrongEmphasis", children: [{ text: "**Core**" }] },
+        { text: " done\n" },
+      ],
+    };
+    const root: ParseTree = { children: [para] };
+    unwrapSoftWrappedParagraphs(root);
+    expect(renderToText(root)).toBe("keep this break  \n**Core** done\n");
+  });
+
   test("preserves two-space hard break (  \\n)", () => {
     const para: ParseTree = {
       type: "Paragraph",

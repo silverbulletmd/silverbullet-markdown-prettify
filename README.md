@@ -30,7 +30,7 @@ Only the pure string-level `finalizeWhitespace` tests ship in this standalone re
 1. In your SilverBullet space, create a namespace folder, e.g. `Library/zefhemel/`.
 2. Symlink this repo into it:
    ```bash
-   ln -s "$PWD" ~/myspace/Library/zefhemel/markdown-prettify
+   ln -s "$PWD" ~/myspace/Library/silverbulletmd/markdown-prettify
    ```
 3. Run `npm run build` whenever you change source files; SilverBullet reloads the plug automatically (or run `Plugs: Reload` to force).
 

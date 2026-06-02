@@ -8,15 +8,22 @@ import type { PrettifyConfig } from "../pipeline.ts";
 export function unwrapSoftWrappedParagraphs(tree: ParseTree): void {
   skipOpaque(tree, (n) => {
     if (n.type !== "Paragraph" || !n.children) return;
-    for (const child of n.children) {
+    const children = n.children;
+    for (let i = 0; i < children.length; i++) {
+      const child = children[i];
       if (child.text === undefined) continue;
-      child.text = rewriteSoftWraps(child.text);
+      // Only the paragraph's final text node ends with the terminating
+      // newline. A trailing newline on any earlier text node (e.g. a node
+      // that precedes inline markup like **bold**) is a soft wrap and must
+      // be reflowed too.
+      const isLast = i === children.length - 1;
+      child.text = rewriteSoftWraps(child.text, isLast);
     }
   });
 }
 
-function rewriteSoftWraps(s: string): string {
-  const endsWithNewline = s.endsWith("\n");
+function rewriteSoftWraps(s: string, preserveTrailingNewline: boolean): string {
+  const endsWithNewline = preserveTrailingNewline && s.endsWith("\n");
   const body = endsWithNewline ? s.slice(0, -1) : s;
   let out = "";
   for (let i = 0; i < body.length; i++) {
