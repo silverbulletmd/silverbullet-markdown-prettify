@@ -2,7 +2,7 @@
 
 SilverBullet library that cleans up markdown in an opinionated (and SilverBullet optimized) way. It adds a `Markdown: Prettify` command (default `Ctrl-Alt-p` / `Cmd-Alt-p`) to clean up the current page (or selection) using an ordered pipeline of ParseTree-based rules.
 
-See [MarkdownPrettify.md](./MarkdownPrettify.md) for a full description of the rules, configuration schema, and install instructions.
+See [Prettify.md](./Prettify.md) for a full description of the rules, configuration schema, and install instructions.
 
 ## Install
 
