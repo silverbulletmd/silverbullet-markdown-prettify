@@ -1,15 +1,36 @@
 import type { ParseTree } from "@silverbulletmd/silverbullet/lib/tree";
-import { skipOpaque } from "../pipeline.ts";
+import { OPAQUE_TYPES } from "../pipeline.ts";
 
 export function collapseSpaceRuns(tree: ParseTree): void {
-  skipOpaque(tree, (n) => {
-    if (n.text === undefined) return;
-    n.text = collapse(n.text);
-  });
-}
+  // Indentation can be split across gap nodes. Track the rendered line position
+  // across all leaves, including opaque content, without modifying that content.
+  let atLineStart = true;
+  function walk(node: ParseTree, opaque = false): void {
+    opaque = opaque || (node.type !== undefined && OPAQUE_TYPES.has(node.type));
+    if (node.text !== undefined) {
+      const text = node.text;
+      let result = "";
+      for (let i = 0; i < text.length; i++) {
+        const ch = text[i];
+        if (ch === " ") {
+          let end = i + 1;
+          while (text[end] === " ") end++;
+          const spaces = text.slice(i, end);
+          const hardBreak = spaces.length >= 2 &&
+            (text[end] === "\n" || text.slice(end, end + 2) === "\r\n");
+          result += opaque || atLineStart || hardBreak ? spaces : " ";
+          i = end - 1;
+        } else {
+          result += ch;
+          if (ch === "\n") atLineStart = true;
+          else if (ch !== "\t" && ch !== "\r") atLineStart = false;
+        }
+      }
+      if (!opaque) node.text = result;
+      return;
+    }
+    for (const child of node.children ?? []) walk(child, opaque);
+  }
 
-function collapse(s: string): string {
-  // Collapse runs of 2+ spaces to 1 space, EXCEPT preserve the exact sequence
-  // "  \n" (two trailing spaces followed by newline — a Markdown hard break).
-  return s.replace(/ {2,}(?!\n)/g, " ");
+  walk(tree);
 }

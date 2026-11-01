@@ -24,6 +24,43 @@ function orderedList(...items: ParseTree[]): ParseTree {
 }
 
 describe("normalizeBullets", () => {
+  test.each(["BulletList", "OrderedList"])("removes blank lines between %s items", (type) => {
+    const mark = type === "BulletList" ? "*" : "1.";
+    const root: ParseTree = {
+      children: [
+        { text: "Before\n\n" },
+        { type, children: [
+          { type: "ListItem", children: [listMark(mark), { text: " first" }] },
+          { text: "\n \t\n\n  " },
+          { type: "ListItem", children: [listMark(mark), { text: " second" }] },
+        ] },
+        { text: "\n\nAfter\n" },
+      ],
+    };
+    normalizeBullets(root, DEFAULT_CONFIG);
+    expect(renderToText(root)).toBe(type === "BulletList"
+      ? "Before\n\n* first\n  * second\n\nAfter\n"
+      : "Before\n\n1. first\n  2. second\n\nAfter\n");
+  });
+
+  test("removes blank lines before and within nested lists, preserving item paragraphs and code", () => {
+    const root = bulletList({ type: "ListItem", children: [
+      listMark("*"), { text: " parent" },
+      { text: "\n\n  " },
+      { type: "Paragraph", children: [{ text: "another paragraph" }] },
+      { text: "\n\n  " },
+      orderedList(
+        { type: "ListItem", children: [listMark("1."), { text: " child" }] },
+        { text: "\n\n  " },
+        { type: "ListItem", children: [listMark("2."), { text: " next" }] },
+      ),
+      { text: "\n\n  " },
+      { type: "FencedCode", children: [{ text: "```\na\n\nb\n```" }] },
+    ] });
+    normalizeBullets(root, DEFAULT_CONFIG);
+    expect(renderToText(root)).toBe("* parent\n\n  another paragraph\n  1. child\n  2. next\n\n  ```\na\n\nb\n```");
+  });
+
   test("bullet marker '-' is rewritten to '*' with default config (bulletMarker: '*')", () => {
     const list = bulletList(listItem("-", "one"), listItem("-", "two"));
     const root: ParseTree = { children: [list] };

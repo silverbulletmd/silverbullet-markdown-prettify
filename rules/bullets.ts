@@ -4,6 +4,9 @@ import type { PrettifyConfig } from "../pipeline.ts";
 
 export function normalizeBullets(tree: ParseTree, cfg: PrettifyConfig): void {
   skipOpaque(tree, (n) => {
+    if (n.type === "BulletList" || n.type === "OrderedList" || n.type === "ListItem") {
+      removeListBlankLines(n);
+    }
     if (n.type === "BulletList") {
       for (const item of n.children ?? []) {
         if (item.type !== "ListItem") continue;
@@ -16,6 +19,24 @@ export function normalizeBullets(tree: ParseTree, cfg: PrettifyConfig): void {
       renumberOrderedList(n);
     }
   });
+}
+
+// Parser gap nodes contain the newlines and indentation between list items.
+// Only tighten gaps before items or nested lists: paragraph and code-block
+// separators inside an item carry meaning and must remain intact.
+function removeListBlankLines(node: ParseTree): void {
+  const children = node.children ?? [];
+  for (let i = 1; i < children.length - 1; i++) {
+    const gap = children[i];
+    const next = children[i + 1];
+    if (gap.type || gap.text === undefined || !/^[ \t\r\n]+$/.test(gap.text)) continue;
+    const beforeItem = next.type === "ListItem" && children[i - 1].type === "ListItem";
+    const beforeNestedList = node.type === "ListItem" &&
+      (next.type === "BulletList" || next.type === "OrderedList");
+    if (beforeItem || beforeNestedList) {
+      gap.text = gap.text.replace(/(\r?\n)(?:[ \t]*\r?\n)+/g, "$1");
+    }
+  }
 }
 
 function rewriteBulletMark(mark: ParseTree, target: string) {

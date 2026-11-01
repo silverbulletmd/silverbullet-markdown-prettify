@@ -8,11 +8,11 @@ Adds a `Markdown: Prettify` command (default binding `Ctrl-Alt-p` / `Cmd-Alt-p`)
 
 - Convert setext (`===` / `---`) headings to ATX (`#`)
 - Unwrap soft-wrapped paragraphs (the editor handles wrapping)
-- Normalize bullet markers; renumber ordered lists sequentially (preserving the starting value); `N)` is normalized to `N.`
+- Normalize bullet markers; renumber ordered lists sequentially (preserving the starting value); `N)` is normalized to `N.`; remove blank lines between list items and before nested lists
 - Normalize emphasis markers (with a mid-word `*` safety override)
 - Trim whitespace inside wikilinks (`[[ Foo | Bar ]]` → `[[Foo|Bar]]`)
 - Align pipe tables to uniform column widths
-- Collapse runs of spaces (outside code)
+- Collapse runs of spaces (outside code), preserving leading indentation
 - Lift page-level hashtags into the frontmatter `tags:` key (only when the page already has a frontmatter block — no frontmatter is created out of thin air)
 - Trim trailing whitespace, collapse 3+ blank lines, ensure one trailing newline
 
@@ -50,7 +50,7 @@ config.define("markdownPrettify", {
     },
     normalizeBullets = {
       type = "boolean", default = true,
-      description = "Normalize bullet markers and ordered-list style (N) becomes N.).",
+      description = "Normalize bullet markers and ordered-list style; remove blank lines between list items and before nested lists.",
       ui = { category = "Markdown Prettify", label = "Normalize bullets", order = 3 },
     },
     bulletMarker = {
