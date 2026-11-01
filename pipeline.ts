@@ -4,6 +4,7 @@ import { markdown } from "@silverbulletmd/silverbullet/syscalls";
 import { normalizeHeadings } from "./rules/headings.ts";
 import {
   finalizeWhitespace,
+  normalizeBlankLines,
   unwrapSoftWrappedParagraphs,
 } from "./rules/whitespace.ts";
 import { normalizeBullets } from "./rules/bullets.ts";
@@ -91,6 +92,7 @@ export async function runPipeline(
   if (scope === "page" && cfg.liftPageTagsToFrontmatter) {
     liftPageTagsToFrontmatter(tree);
   }
+  if (cfg.collapseBlankLines) normalizeBlankLines(tree, scope);
   const rendered = renderToText(tree);
   return finalizeWhitespace(rendered, cfg);
 }

@@ -1,8 +1,59 @@
 import { describe, expect, test } from "vitest";
 import type { ParseTree } from "@silverbulletmd/silverbullet/lib/tree";
 import { renderToText } from "@silverbulletmd/silverbullet/lib/tree";
-import { finalizeWhitespace, unwrapSoftWrappedParagraphs } from "./whitespace.ts";
+import { finalizeWhitespace, normalizeBlankLines, unwrapSoftWrappedParagraphs } from "./whitespace.ts";
 import { DEFAULT_CONFIG } from "../pipeline.ts";
+
+describe("normalizeBlankLines", () => {
+  test.each([
+    "ATXHeading1", "ATXHeading2", "ATXHeading3", "ATXHeading4",
+    "ATXHeading5", "ATXHeading6", "SetextHeading1", "SetextHeading2",
+  ])("removes blank lines after %s without removing following indentation", (type) => {
+    const root: ParseTree = { children: [
+      { text: "before\n\n" },
+      { type, children: [{ text: "heading" }] },
+      { text: "\n \t\n\n  " },
+      { type: "Paragraph", children: [{ text: "content" }] },
+    ] };
+    normalizeBlankLines(root, "page");
+    expect(renderToText(root)).toBe("before\n\nheading\n  content");
+  });
+
+  test("removes whitespace-only lines at page boundaries", () => {
+    const root: ParseTree = { children: [
+      { text: " \t\n\n  " },
+      { type: "Paragraph", children: [{ text: "content" }] },
+      { text: "\n  \n\t\n  " },
+    ] };
+    normalizeBlankLines(root, "page");
+    expect(renderToText(root)).toBe("  content\n");
+  });
+
+  test("preserves selection boundary spacing", () => {
+    const root: ParseTree = { children: [
+      { text: "\n\n" },
+      { type: "Paragraph", children: [{ text: "content" }] },
+      { text: "\n\n" },
+    ] };
+    normalizeBlankLines(root, "selection");
+    expect(renderToText(root)).toBe("\n\ncontent\n\n");
+  });
+
+  test.each(["FencedCode", "Blockquote", "FrontMatter"])("preserves blank lines inside %s", (type) => {
+    const root: ParseTree = { children: [{ type, children: [
+      { type: "ATXHeading1", children: [{ text: "# example" }] },
+      { text: "\n\ncontent\n\n" },
+    ] }] };
+    normalizeBlankLines(root, "page");
+    expect(renderToText(root)).toBe("# example\n\ncontent\n\n");
+  });
+
+  test("clears an entirely blank page", () => {
+    const root: ParseTree = { children: [{ text: " \n\t\n " }] };
+    normalizeBlankLines(root, "page");
+    expect(renderToText(root)).toBe("");
+  });
+});
 
 describe("finalizeWhitespace", () => {
   test("trims trailing whitespace on each line", () => {

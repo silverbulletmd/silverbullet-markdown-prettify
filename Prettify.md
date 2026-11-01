@@ -14,7 +14,7 @@ Adds a `Markdown: Prettify` command (default binding `Ctrl-Alt-p` / `Cmd-Alt-p`)
 - Align pipe tables to uniform column widths
 - Collapse runs of spaces (outside code), preserving leading indentation
 - Lift page-level hashtags into the frontmatter `tags:` key (only when the page already has a frontmatter block — no frontmatter is created out of thin air)
-- Trim trailing whitespace, collapse 3+ blank lines, ensure one trailing newline
+- Trim trailing whitespace, collapse 3+ blank lines, remove blank lines below headings and at page boundaries, ensure one trailing newline
 
 Code blocks, inline code, math, HTML, blockquotes, transclusions, and existing frontmatter YAML are left byte-identical (the tag-lift rule is the only touch to frontmatter).
 
@@ -93,7 +93,7 @@ config.define("markdownPrettify", {
     },
     collapseBlankLines = {
       type = "boolean", default = true,
-      description = "Collapse 3+ consecutive blank lines to one.",
+      description = "Collapse 3+ consecutive blank lines to one; remove blank lines below headings and at page boundaries.",
       ui = { category = "Markdown Prettify", label = "Collapse blank lines", order = 13 },
     },
     ensureTrailingNewline = {

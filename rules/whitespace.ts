@@ -1,6 +1,35 @@
 import type { ParseTree } from "@silverbulletmd/silverbullet/lib/tree";
 import { skipOpaque } from "../pipeline.ts";
-import type { PrettifyConfig } from "../pipeline.ts";
+import type { PrettifyConfig, Scope } from "../pipeline.ts";
+
+// Work on parser gaps so heading-like text and blank lines in opaque blocks
+// are not mistaken for document structure.
+export function normalizeBlankLines(tree: ParseTree, scope: Scope): void {
+  skipOpaque(tree, (node) => {
+    const children = node.children ?? [];
+    for (let i = 1; i < children.length; i++) {
+      if (!/^(?:ATXHeading[1-6]|SetextHeading[12])$/.test(children[i - 1].type ?? "")) continue;
+      const gap = children[i];
+      if (gap.text !== undefined && !gap.type && /^[ \t\r\n]*$/.test(gap.text)) {
+        gap.text = gap.text.replace(/(\r?\n)(?:[ \t]*\r?\n)+/g, "$1");
+      }
+    }
+  });
+  if (scope !== "page") return;
+  const children = tree.children ?? [];
+  if (children.every((node) => !node.type && /^[ \t\r\n]*$/.test(node.text ?? ""))) {
+    for (const node of children) node.text = "";
+    return;
+  }
+  const first = children[0];
+  if (first?.text !== undefined && !first.type) {
+    first.text = first.text.replace(/^(?:[ \t]*\r?\n)+/, "");
+  }
+  const last = children[children.length - 1];
+  if (last?.text !== undefined && !last.type) {
+    last.text = last.text.replace(/(\r?\n)[ \t\r\n]*$/, "$1");
+  }
+}
 
 // Unwrap soft-wrapped paragraph text. Called on the full tree; walks into
 // non-opaque subtrees only. Preserves trailing two-space hard breaks and
