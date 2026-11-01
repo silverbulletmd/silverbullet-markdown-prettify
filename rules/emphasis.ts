@@ -1,6 +1,6 @@
 import type { ParseTree } from "@silverbulletmd/silverbullet/lib/tree";
-import { skipOpaque } from "../pipeline.ts";
-import type { PrettifyConfig } from "../pipeline.ts";
+import { skipOpaque } from "../tree.ts";
+import type { PrettifyConfig } from "../config.ts";
 
 // `source` is the original text the tree was parsed from. Required for
 // mid-word detection — offsets index into the original source.

@@ -1,6 +1,6 @@
 import type { ParseTree } from "@silverbulletmd/silverbullet/lib/tree";
-import { skipOpaque } from "../pipeline.ts";
-import type { PrettifyConfig } from "../pipeline.ts";
+import { skipOpaque } from "../tree.ts";
+import type { PrettifyConfig } from "../config.ts";
 
 export function normalizeBullets(tree: ParseTree, cfg: PrettifyConfig): void {
   skipOpaque(tree, (n) => {

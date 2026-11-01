@@ -1,0 +1,4432 @@
+{
+  "before   words\n\n~~~\nkeep   \n\n\n\nend\n~~~\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 39,
+    "children": [
+      {
+        "type": "Paragraph",
+        "from": 0,
+        "to": 14,
+        "children": [
+          {
+            "from": 0,
+            "to": 14,
+            "text": "before   words"
+          }
+        ]
+      },
+      {
+        "from": 14,
+        "to": 16,
+        "text": "\n\n"
+      },
+      {
+        "type": "FencedCode",
+        "from": 16,
+        "to": 38,
+        "children": [
+          {
+            "type": "CodeMark",
+            "from": 16,
+            "to": 19,
+            "children": [
+              {
+                "from": 16,
+                "to": 19,
+                "text": "~~~"
+              }
+            ]
+          },
+          {
+            "from": 19,
+            "to": 20,
+            "text": "\n"
+          },
+          {
+            "type": "CodeText",
+            "from": 20,
+            "to": 34,
+            "children": [
+              {
+                "from": 20,
+                "to": 34,
+                "text": "keep   \n\n\n\nend"
+              }
+            ]
+          },
+          {
+            "from": 34,
+            "to": 35,
+            "text": "\n"
+          },
+          {
+            "type": "CodeMark",
+            "from": 35,
+            "to": 38,
+            "children": [
+              {
+                "from": 35,
+                "to": 38,
+                "text": "~~~"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 38,
+        "to": 39,
+        "text": "\n"
+      }
+    ]
+  },
+  "before words\n\n~~~\nkeep   \n\n\n\nend\n~~~\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 37,
+    "children": [
+      {
+        "type": "Paragraph",
+        "from": 0,
+        "to": 12,
+        "children": [
+          {
+            "from": 0,
+            "to": 12,
+            "text": "before words"
+          }
+        ]
+      },
+      {
+        "from": 12,
+        "to": 14,
+        "text": "\n\n"
+      },
+      {
+        "type": "FencedCode",
+        "from": 14,
+        "to": 36,
+        "children": [
+          {
+            "type": "CodeMark",
+            "from": 14,
+            "to": 17,
+            "children": [
+              {
+                "from": 14,
+                "to": 17,
+                "text": "~~~"
+              }
+            ]
+          },
+          {
+            "from": 17,
+            "to": 18,
+            "text": "\n"
+          },
+          {
+            "type": "CodeText",
+            "from": 18,
+            "to": 32,
+            "children": [
+              {
+                "from": 18,
+                "to": 32,
+                "text": "keep   \n\n\n\nend"
+              }
+            ]
+          },
+          {
+            "from": 32,
+            "to": 33,
+            "text": "\n"
+          },
+          {
+            "type": "CodeMark",
+            "from": 33,
+            "to": 36,
+            "children": [
+              {
+                "from": 33,
+                "to": 36,
+                "text": "~~~"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 36,
+        "to": 37,
+        "text": "\n"
+      }
+    ]
+  },
+  "````\n```\nkeep   \n\n\n\n````\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 25,
+    "children": [
+      {
+        "type": "FencedCode",
+        "from": 0,
+        "to": 24,
+        "children": [
+          {
+            "type": "CodeMark",
+            "from": 0,
+            "to": 4,
+            "children": [
+              {
+                "from": 0,
+                "to": 4,
+                "text": "````"
+              }
+            ]
+          },
+          {
+            "from": 4,
+            "to": 5,
+            "text": "\n"
+          },
+          {
+            "type": "CodeText",
+            "from": 5,
+            "to": 19,
+            "children": [
+              {
+                "from": 5,
+                "to": 19,
+                "text": "```\nkeep   \n\n\n"
+              }
+            ]
+          },
+          {
+            "from": 19,
+            "to": 20,
+            "text": "\n"
+          },
+          {
+            "type": "CodeMark",
+            "from": 20,
+            "to": 24,
+            "children": [
+              {
+                "from": 20,
+                "to": 24,
+                "text": "````"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 24,
+        "to": 25,
+        "text": "\n"
+      }
+    ]
+  },
+  "    code   \n\n\n    more\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 23,
+    "children": [
+      {
+        "from": 0,
+        "to": 4,
+        "text": "    "
+      },
+      {
+        "type": "CodeBlock",
+        "from": 4,
+        "to": 22,
+        "children": [
+          {
+            "type": "CodeText",
+            "from": 4,
+            "to": 14,
+            "children": [
+              {
+                "from": 4,
+                "to": 14,
+                "text": "code   \n\n\n"
+              }
+            ]
+          },
+          {
+            "from": 14,
+            "to": 18,
+            "text": "    "
+          },
+          {
+            "type": "CodeText",
+            "from": 18,
+            "to": 22,
+            "children": [
+              {
+                "from": 18,
+                "to": 22,
+                "text": "more"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 22,
+        "to": 23,
+        "text": "\n"
+      }
+    ]
+  },
+  "---\nvalue: |\n  a\n\n\n  b\n---\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 27,
+    "children": [
+      {
+        "type": "FrontMatter",
+        "from": 0,
+        "to": 26,
+        "children": [
+          {
+            "type": "FrontMatterMarker",
+            "from": 0,
+            "to": 4,
+            "children": [
+              {
+                "from": 0,
+                "to": 4,
+                "text": "---\n"
+              }
+            ]
+          },
+          {
+            "type": "FrontMatterCode",
+            "from": 4,
+            "to": 23,
+            "children": [
+              {
+                "type": "Document",
+                "from": 4,
+                "to": 23,
+                "children": [
+                  {
+                    "type": "atom",
+                    "from": 4,
+                    "to": 9,
+                    "children": [
+                      {
+                        "from": 4,
+                        "to": 9,
+                        "text": "value"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "meta",
+                    "from": 9,
+                    "to": 12,
+                    "children": [
+                      {
+                        "from": 9,
+                        "to": 12,
+                        "text": ": |"
+                      }
+                    ]
+                  },
+                  {
+                    "from": 12,
+                    "to": 13,
+                    "text": "\n"
+                  },
+                  {
+                    "type": "string",
+                    "from": 13,
+                    "to": 16,
+                    "children": [
+                      {
+                        "from": 13,
+                        "to": 16,
+                        "text": "  a"
+                      }
+                    ]
+                  },
+                  {
+                    "from": 16,
+                    "to": 19,
+                    "text": "\n\n\n"
+                  },
+                  {
+                    "type": "string",
+                    "from": 19,
+                    "to": 22,
+                    "children": [
+                      {
+                        "from": 19,
+                        "to": 22,
+                        "text": "  b"
+                      }
+                    ]
+                  },
+                  {
+                    "from": 22,
+                    "to": 23,
+                    "text": "\n"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "FrontMatterMarker",
+            "from": 23,
+            "to": 26,
+            "children": [
+              {
+                "from": 23,
+                "to": 26,
+                "text": "---"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 26,
+        "to": 27,
+        "text": "\n"
+      }
+    ]
+  },
+  "<pre>\nkeep   \n\n\n\n</pre>\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 24,
+    "children": [
+      {
+        "type": "HTMLBlock",
+        "from": 0,
+        "to": 23,
+        "children": [
+          {
+            "from": 0,
+            "to": 23,
+            "text": "<pre>\nkeep   \n\n\n\n</pre>"
+          }
+        ]
+      },
+      {
+        "from": 23,
+        "to": 24,
+        "text": "\n"
+      }
+    ]
+  },
+  "> keep   \n> next\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 17,
+    "children": [
+      {
+        "type": "Blockquote",
+        "from": 0,
+        "to": 16,
+        "children": [
+          {
+            "type": "QuoteMark",
+            "from": 0,
+            "to": 1,
+            "children": [
+              {
+                "from": 0,
+                "to": 1,
+                "text": ">"
+              }
+            ]
+          },
+          {
+            "from": 1,
+            "to": 2,
+            "text": " "
+          },
+          {
+            "type": "Paragraph",
+            "from": 2,
+            "to": 16,
+            "children": [
+              {
+                "from": 2,
+                "to": 6,
+                "text": "keep"
+              },
+              {
+                "type": "HardBreak",
+                "from": 6,
+                "to": 10,
+                "children": [
+                  {
+                    "from": 6,
+                    "to": 10,
+                    "text": "   \n"
+                  }
+                ]
+              },
+              {
+                "type": "QuoteMark",
+                "from": 10,
+                "to": 11,
+                "children": [
+                  {
+                    "from": 10,
+                    "to": 11,
+                    "text": ">"
+                  }
+                ]
+              },
+              {
+                "from": 11,
+                "to": 16,
+                "text": " next"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 16,
+        "to": 17,
+        "text": "\n"
+      }
+    ]
+  },
+  "text `a   \nb` end\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 18,
+    "children": [
+      {
+        "type": "Paragraph",
+        "from": 0,
+        "to": 17,
+        "children": [
+          {
+            "from": 0,
+            "to": 5,
+            "text": "text "
+          },
+          {
+            "type": "InlineCode",
+            "from": 5,
+            "to": 13,
+            "children": [
+              {
+                "type": "CodeMark",
+                "from": 5,
+                "to": 6,
+                "children": [
+                  {
+                    "from": 5,
+                    "to": 6,
+                    "text": "`"
+                  }
+                ]
+              },
+              {
+                "from": 6,
+                "to": 12,
+                "text": "a   \nb"
+              },
+              {
+                "type": "CodeMark",
+                "from": 12,
+                "to": 13,
+                "children": [
+                  {
+                    "from": 12,
+                    "to": 13,
+                    "text": "`"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 13,
+            "to": 17,
+            "text": " end"
+          }
+        ]
+      },
+      {
+        "from": 17,
+        "to": 18,
+        "text": "\n"
+      }
+    ]
+  },
+  "line   \nnext\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 13,
+    "children": [
+      {
+        "type": "Paragraph",
+        "from": 0,
+        "to": 12,
+        "children": [
+          {
+            "from": 0,
+            "to": 4,
+            "text": "line"
+          },
+          {
+            "type": "HardBreak",
+            "from": 4,
+            "to": 8,
+            "children": [
+              {
+                "from": 4,
+                "to": 8,
+                "text": "   \n"
+              }
+            ]
+          },
+          {
+            "from": 8,
+            "to": 12,
+            "text": "next"
+          }
+        ]
+      },
+      {
+        "from": 12,
+        "to": 13,
+        "text": "\n"
+      }
+    ]
+  },
+  "a*bold*c `x   y`\n===\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 21,
+    "children": [
+      {
+        "type": "SetextHeading1",
+        "from": 0,
+        "to": 20,
+        "children": [
+          {
+            "from": 0,
+            "to": 1,
+            "text": "a"
+          },
+          {
+            "type": "Emphasis",
+            "from": 1,
+            "to": 7,
+            "children": [
+              {
+                "type": "EmphasisMark",
+                "from": 1,
+                "to": 2,
+                "children": [
+                  {
+                    "from": 1,
+                    "to": 2,
+                    "text": "*"
+                  }
+                ]
+              },
+              {
+                "from": 2,
+                "to": 6,
+                "text": "bold"
+              },
+              {
+                "type": "EmphasisMark",
+                "from": 6,
+                "to": 7,
+                "children": [
+                  {
+                    "from": 6,
+                    "to": 7,
+                    "text": "*"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 7,
+            "to": 9,
+            "text": "c "
+          },
+          {
+            "type": "InlineCode",
+            "from": 9,
+            "to": 16,
+            "children": [
+              {
+                "type": "CodeMark",
+                "from": 9,
+                "to": 10,
+                "children": [
+                  {
+                    "from": 9,
+                    "to": 10,
+                    "text": "`"
+                  }
+                ]
+              },
+              {
+                "from": 10,
+                "to": 15,
+                "text": "x   y"
+              },
+              {
+                "type": "CodeMark",
+                "from": 15,
+                "to": 16,
+                "children": [
+                  {
+                    "from": 15,
+                    "to": 16,
+                    "text": "`"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 16,
+            "to": 17,
+            "text": "\n"
+          },
+          {
+            "type": "HeaderMark",
+            "from": 17,
+            "to": 20,
+            "children": [
+              {
+                "from": 17,
+                "to": 20,
+                "text": "==="
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 20,
+        "to": 21,
+        "text": "\n"
+      }
+    ]
+  },
+  "# a*bold*c `x   y`\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 19,
+    "children": [
+      {
+        "type": "ATXHeading1",
+        "from": 0,
+        "to": 18,
+        "children": [
+          {
+            "type": "HeaderMark",
+            "from": 0,
+            "to": 1,
+            "children": [
+              {
+                "from": 0,
+                "to": 1,
+                "text": "#"
+              }
+            ]
+          },
+          {
+            "from": 1,
+            "to": 3,
+            "text": " a"
+          },
+          {
+            "type": "Emphasis",
+            "from": 3,
+            "to": 9,
+            "children": [
+              {
+                "type": "EmphasisMark",
+                "from": 3,
+                "to": 4,
+                "children": [
+                  {
+                    "from": 3,
+                    "to": 4,
+                    "text": "*"
+                  }
+                ]
+              },
+              {
+                "from": 4,
+                "to": 8,
+                "text": "bold"
+              },
+              {
+                "type": "EmphasisMark",
+                "from": 8,
+                "to": 9,
+                "children": [
+                  {
+                    "from": 8,
+                    "to": 9,
+                    "text": "*"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 9,
+            "to": 11,
+            "text": "c "
+          },
+          {
+            "type": "InlineCode",
+            "from": 11,
+            "to": 18,
+            "children": [
+              {
+                "type": "CodeMark",
+                "from": 11,
+                "to": 12,
+                "children": [
+                  {
+                    "from": 11,
+                    "to": 12,
+                    "text": "`"
+                  }
+                ]
+              },
+              {
+                "from": 12,
+                "to": 17,
+                "text": "x   y"
+              },
+              {
+                "type": "CodeMark",
+                "from": 17,
+                "to": 18,
+                "children": [
+                  {
+                    "from": 17,
+                    "to": 18,
+                    "text": "`"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 18,
+        "to": 19,
+        "text": "\n"
+      }
+    ]
+  },
+  "__bold__ [[ Foo | Bar ]]\n---\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 29,
+    "children": [
+      {
+        "type": "SetextHeading2",
+        "from": 0,
+        "to": 28,
+        "children": [
+          {
+            "type": "StrongEmphasis",
+            "from": 0,
+            "to": 8,
+            "children": [
+              {
+                "type": "EmphasisMark",
+                "from": 0,
+                "to": 2,
+                "children": [
+                  {
+                    "from": 0,
+                    "to": 2,
+                    "text": "__"
+                  }
+                ]
+              },
+              {
+                "from": 2,
+                "to": 6,
+                "text": "bold"
+              },
+              {
+                "type": "EmphasisMark",
+                "from": 6,
+                "to": 8,
+                "children": [
+                  {
+                    "from": 6,
+                    "to": 8,
+                    "text": "__"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 8,
+            "to": 9,
+            "text": " "
+          },
+          {
+            "type": "WikiLink",
+            "from": 9,
+            "to": 24,
+            "children": [
+              {
+                "type": "WikiLinkMark",
+                "from": 9,
+                "to": 11,
+                "children": [
+                  {
+                    "from": 9,
+                    "to": 11,
+                    "text": "[["
+                  }
+                ]
+              },
+              {
+                "type": "WikiLinkPage",
+                "from": 11,
+                "to": 16,
+                "children": [
+                  {
+                    "from": 11,
+                    "to": 16,
+                    "text": " Foo "
+                  }
+                ]
+              },
+              {
+                "type": "WikiLinkMark",
+                "from": 16,
+                "to": 17,
+                "children": [
+                  {
+                    "from": 16,
+                    "to": 17,
+                    "text": "|"
+                  }
+                ]
+              },
+              {
+                "type": "WikiLinkAlias",
+                "from": 17,
+                "to": 22,
+                "children": [
+                  {
+                    "from": 17,
+                    "to": 22,
+                    "text": " Bar "
+                  }
+                ]
+              },
+              {
+                "type": "WikiLinkMark",
+                "from": 22,
+                "to": 24,
+                "children": [
+                  {
+                    "from": 22,
+                    "to": 24,
+                    "text": "]]"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 24,
+            "to": 25,
+            "text": "\n"
+          },
+          {
+            "type": "HeaderMark",
+            "from": 25,
+            "to": 28,
+            "children": [
+              {
+                "from": 25,
+                "to": 28,
+                "text": "---"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 28,
+        "to": 29,
+        "text": "\n"
+      }
+    ]
+  },
+  "## **bold** [[Foo|Bar]]\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 24,
+    "children": [
+      {
+        "type": "ATXHeading2",
+        "from": 0,
+        "to": 23,
+        "children": [
+          {
+            "type": "HeaderMark",
+            "from": 0,
+            "to": 2,
+            "children": [
+              {
+                "from": 0,
+                "to": 2,
+                "text": "##"
+              }
+            ]
+          },
+          {
+            "from": 2,
+            "to": 3,
+            "text": " "
+          },
+          {
+            "type": "StrongEmphasis",
+            "from": 3,
+            "to": 11,
+            "children": [
+              {
+                "type": "EmphasisMark",
+                "from": 3,
+                "to": 5,
+                "children": [
+                  {
+                    "from": 3,
+                    "to": 5,
+                    "text": "**"
+                  }
+                ]
+              },
+              {
+                "from": 5,
+                "to": 9,
+                "text": "bold"
+              },
+              {
+                "type": "EmphasisMark",
+                "from": 9,
+                "to": 11,
+                "children": [
+                  {
+                    "from": 9,
+                    "to": 11,
+                    "text": "**"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 11,
+            "to": 12,
+            "text": " "
+          },
+          {
+            "type": "WikiLink",
+            "from": 12,
+            "to": 23,
+            "children": [
+              {
+                "type": "WikiLinkMark",
+                "from": 12,
+                "to": 14,
+                "children": [
+                  {
+                    "from": 12,
+                    "to": 14,
+                    "text": "[["
+                  }
+                ]
+              },
+              {
+                "type": "WikiLinkPage",
+                "from": 14,
+                "to": 17,
+                "children": [
+                  {
+                    "from": 14,
+                    "to": 17,
+                    "text": "Foo"
+                  }
+                ]
+              },
+              {
+                "type": "WikiLinkMark",
+                "from": 17,
+                "to": 18,
+                "children": [
+                  {
+                    "from": 17,
+                    "to": 18,
+                    "text": "|"
+                  }
+                ]
+              },
+              {
+                "type": "WikiLinkAlias",
+                "from": 18,
+                "to": 21,
+                "children": [
+                  {
+                    "from": 18,
+                    "to": 21,
+                    "text": "Bar"
+                  }
+                ]
+              },
+              {
+                "type": "WikiLinkMark",
+                "from": 21,
+                "to": 23,
+                "children": [
+                  {
+                    "from": 21,
+                    "to": 23,
+                    "text": "]]"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 23,
+        "to": 24,
+        "text": "\n"
+      }
+    ]
+  },
+  "---\ntitle: Hello\n---\nTitle #foo\n===\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 36,
+    "children": [
+      {
+        "type": "FrontMatter",
+        "from": 0,
+        "to": 20,
+        "children": [
+          {
+            "type": "FrontMatterMarker",
+            "from": 0,
+            "to": 4,
+            "children": [
+              {
+                "from": 0,
+                "to": 4,
+                "text": "---\n"
+              }
+            ]
+          },
+          {
+            "type": "FrontMatterCode",
+            "from": 4,
+            "to": 17,
+            "children": [
+              {
+                "type": "Document",
+                "from": 4,
+                "to": 17,
+                "children": [
+                  {
+                    "type": "atom",
+                    "from": 4,
+                    "to": 9,
+                    "children": [
+                      {
+                        "from": 4,
+                        "to": 9,
+                        "text": "title"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "meta",
+                    "from": 9,
+                    "to": 11,
+                    "children": [
+                      {
+                        "from": 9,
+                        "to": 11,
+                        "text": ": "
+                      }
+                    ]
+                  },
+                  {
+                    "from": 11,
+                    "to": 17,
+                    "text": "Hello\n"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "FrontMatterMarker",
+            "from": 17,
+            "to": 20,
+            "children": [
+              {
+                "from": 17,
+                "to": 20,
+                "text": "---"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 20,
+        "to": 21,
+        "text": "\n"
+      },
+      {
+        "type": "SetextHeading1",
+        "from": 21,
+        "to": 35,
+        "children": [
+          {
+            "from": 21,
+            "to": 27,
+            "text": "Title "
+          },
+          {
+            "type": "Hashtag",
+            "from": 27,
+            "to": 31,
+            "children": [
+              {
+                "from": 27,
+                "to": 31,
+                "text": "#foo"
+              }
+            ]
+          },
+          {
+            "from": 31,
+            "to": 32,
+            "text": "\n"
+          },
+          {
+            "type": "HeaderMark",
+            "from": 32,
+            "to": 35,
+            "children": [
+              {
+                "from": 32,
+                "to": 35,
+                "text": "==="
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 35,
+        "to": 36,
+        "text": "\n"
+      }
+    ]
+  },
+  "---\ntitle: Hello\ntags: foo\n---\n# Title\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 39,
+    "children": [
+      {
+        "type": "FrontMatter",
+        "from": 0,
+        "to": 30,
+        "children": [
+          {
+            "type": "FrontMatterMarker",
+            "from": 0,
+            "to": 4,
+            "children": [
+              {
+                "from": 0,
+                "to": 4,
+                "text": "---\n"
+              }
+            ]
+          },
+          {
+            "type": "FrontMatterCode",
+            "from": 4,
+            "to": 27,
+            "children": [
+              {
+                "type": "Document",
+                "from": 4,
+                "to": 27,
+                "children": [
+                  {
+                    "type": "atom",
+                    "from": 4,
+                    "to": 9,
+                    "children": [
+                      {
+                        "from": 4,
+                        "to": 9,
+                        "text": "title"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "meta",
+                    "from": 9,
+                    "to": 11,
+                    "children": [
+                      {
+                        "from": 9,
+                        "to": 11,
+                        "text": ": "
+                      }
+                    ]
+                  },
+                  {
+                    "from": 11,
+                    "to": 17,
+                    "text": "Hello\n"
+                  },
+                  {
+                    "type": "atom",
+                    "from": 17,
+                    "to": 21,
+                    "children": [
+                      {
+                        "from": 17,
+                        "to": 21,
+                        "text": "tags"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "meta",
+                    "from": 21,
+                    "to": 23,
+                    "children": [
+                      {
+                        "from": 21,
+                        "to": 23,
+                        "text": ": "
+                      }
+                    ]
+                  },
+                  {
+                    "from": 23,
+                    "to": 27,
+                    "text": "foo\n"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "FrontMatterMarker",
+            "from": 27,
+            "to": 30,
+            "children": [
+              {
+                "from": 27,
+                "to": 30,
+                "text": "---"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 30,
+        "to": 31,
+        "text": "\n"
+      },
+      {
+        "type": "ATXHeading1",
+        "from": 31,
+        "to": 38,
+        "children": [
+          {
+            "type": "HeaderMark",
+            "from": 31,
+            "to": 32,
+            "children": [
+              {
+                "from": 31,
+                "to": 32,
+                "text": "#"
+              }
+            ]
+          },
+          {
+            "from": 32,
+            "to": 38,
+            "text": " Title"
+          }
+        ]
+      },
+      {
+        "from": 38,
+        "to": 39,
+        "text": "\n"
+      }
+    ]
+  },
+  "![[ Foo ]] ${a   + b}\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 22,
+    "children": [
+      {
+        "type": "Paragraph",
+        "from": 0,
+        "to": 21,
+        "children": [
+          {
+            "type": "Image",
+            "from": 0,
+            "to": 10,
+            "children": [
+              {
+                "type": "WikiLink",
+                "from": 0,
+                "to": 10,
+                "children": [
+                  {
+                    "type": "WikiLinkMark",
+                    "from": 0,
+                    "to": 3,
+                    "children": [
+                      {
+                        "from": 0,
+                        "to": 3,
+                        "text": "![["
+                      }
+                    ]
+                  },
+                  {
+                    "type": "WikiLinkPage",
+                    "from": 3,
+                    "to": 8,
+                    "children": [
+                      {
+                        "from": 3,
+                        "to": 8,
+                        "text": " Foo "
+                      }
+                    ]
+                  },
+                  {
+                    "type": "WikiLinkMark",
+                    "from": 8,
+                    "to": 10,
+                    "children": [
+                      {
+                        "from": 8,
+                        "to": 10,
+                        "text": "]]"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 10,
+            "to": 11,
+            "text": " "
+          },
+          {
+            "type": "LuaDirective",
+            "from": 11,
+            "to": 21,
+            "children": [
+              {
+                "type": "LuaDirectiveMark",
+                "from": 11,
+                "to": 13,
+                "children": [
+                  {
+                    "from": 11,
+                    "to": 13,
+                    "text": "${"
+                  }
+                ]
+              },
+              {
+                "type": "LuaExpressionDirective",
+                "from": 13,
+                "to": 20,
+                "children": [
+                  {
+                    "type": "BinaryExpression",
+                    "from": 13,
+                    "to": 20,
+                    "children": [
+                      {
+                        "type": "Name",
+                        "from": 13,
+                        "to": 14,
+                        "children": [
+                          {
+                            "from": 13,
+                            "to": 14,
+                            "text": "a"
+                          }
+                        ]
+                      },
+                      {
+                        "from": 14,
+                        "to": 17,
+                        "text": "   "
+                      },
+                      {
+                        "type": "ArithOp",
+                        "from": 17,
+                        "to": 18,
+                        "children": [
+                          {
+                            "from": 17,
+                            "to": 18,
+                            "text": "+"
+                          }
+                        ]
+                      },
+                      {
+                        "from": 18,
+                        "to": 19,
+                        "text": " "
+                      },
+                      {
+                        "type": "Name",
+                        "from": 19,
+                        "to": 20,
+                        "children": [
+                          {
+                            "from": 19,
+                            "to": 20,
+                            "text": "b"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "LuaDirectiveMark",
+                "from": 20,
+                "to": 21,
+                "children": [
+                  {
+                    "from": 20,
+                    "to": 21,
+                    "text": "}"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 21,
+        "to": 22,
+        "text": "\n"
+      }
+    ]
+  },
+  "word": {
+    "type": "Document",
+    "from": 0,
+    "to": 4,
+    "children": [
+      {
+        "type": "Paragraph",
+        "from": 0,
+        "to": 4,
+        "children": [
+          {
+            "from": 0,
+            "to": 4,
+            "text": "word"
+          }
+        ]
+      }
+    ]
+  },
+  "\n\n hello   word  \n\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 19,
+    "children": [
+      {
+        "from": 0,
+        "to": 3,
+        "text": "\n\n "
+      },
+      {
+        "type": "Paragraph",
+        "from": 3,
+        "to": 17,
+        "children": [
+          {
+            "from": 3,
+            "to": 17,
+            "text": "hello   word  "
+          }
+        ]
+      },
+      {
+        "from": 17,
+        "to": 19,
+        "text": "\n\n"
+      }
+    ]
+  },
+  "\n\n hello word  \n\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 17,
+    "children": [
+      {
+        "from": 0,
+        "to": 3,
+        "text": "\n\n "
+      },
+      {
+        "type": "Paragraph",
+        "from": 3,
+        "to": 15,
+        "children": [
+          {
+            "from": 3,
+            "to": 15,
+            "text": "hello word  "
+          }
+        ]
+      },
+      {
+        "from": 15,
+        "to": 17,
+        "text": "\n\n"
+      }
+    ]
+  },
+  " \n\n\t ": {
+    "type": "Document",
+    "from": 0,
+    "to": 5,
+    "children": [
+      {
+        "from": 0,
+        "to": 5,
+        "text": " \n\n\t "
+      }
+    ]
+  },
+  "---\ntags: foo\n---\n#bar": {
+    "type": "Document",
+    "from": 0,
+    "to": 22,
+    "children": [
+      {
+        "type": "FrontMatter",
+        "from": 0,
+        "to": 17,
+        "children": [
+          {
+            "type": "FrontMatterMarker",
+            "from": 0,
+            "to": 4,
+            "children": [
+              {
+                "from": 0,
+                "to": 4,
+                "text": "---\n"
+              }
+            ]
+          },
+          {
+            "type": "FrontMatterCode",
+            "from": 4,
+            "to": 14,
+            "children": [
+              {
+                "type": "Document",
+                "from": 4,
+                "to": 14,
+                "children": [
+                  {
+                    "type": "atom",
+                    "from": 4,
+                    "to": 8,
+                    "children": [
+                      {
+                        "from": 4,
+                        "to": 8,
+                        "text": "tags"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "meta",
+                    "from": 8,
+                    "to": 10,
+                    "children": [
+                      {
+                        "from": 8,
+                        "to": 10,
+                        "text": ": "
+                      }
+                    ]
+                  },
+                  {
+                    "from": 10,
+                    "to": 14,
+                    "text": "foo\n"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "FrontMatterMarker",
+            "from": 14,
+            "to": 17,
+            "children": [
+              {
+                "from": 14,
+                "to": 17,
+                "text": "---"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 17,
+        "to": 18,
+        "text": "\n"
+      },
+      {
+        "type": "Paragraph",
+        "from": 18,
+        "to": 22,
+        "children": [
+          {
+            "type": "Hashtag",
+            "from": 18,
+            "to": 22,
+            "children": [
+              {
+                "from": 18,
+                "to": 22,
+                "text": "#bar"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "\n\nhello\n\n\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 10,
+    "children": [
+      {
+        "from": 0,
+        "to": 2,
+        "text": "\n\n"
+      },
+      {
+        "type": "Paragraph",
+        "from": 2,
+        "to": 7,
+        "children": [
+          {
+            "from": 2,
+            "to": 7,
+            "text": "hello"
+          }
+        ]
+      },
+      {
+        "from": 7,
+        "to": 10,
+        "text": "\n\n\n"
+      }
+    ]
+  },
+  "hello\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 6,
+    "children": [
+      {
+        "type": "Paragraph",
+        "from": 0,
+        "to": 5,
+        "children": [
+          {
+            "from": 0,
+            "to": 5,
+            "text": "hello"
+          }
+        ]
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "text": "\n"
+      }
+    ]
+  },
+  "a\n\n\n\nb\t\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 8,
+    "children": [
+      {
+        "type": "Paragraph",
+        "from": 0,
+        "to": 1,
+        "children": [
+          {
+            "from": 0,
+            "to": 1,
+            "text": "a"
+          }
+        ]
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "text": "\n\n\n\n"
+      },
+      {
+        "type": "Paragraph",
+        "from": 5,
+        "to": 7,
+        "children": [
+          {
+            "from": 5,
+            "to": 7,
+            "text": "b\t"
+          }
+        ]
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "text": "\n"
+      }
+    ]
+  },
+  "a\n\nb\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 5,
+    "children": [
+      {
+        "type": "Paragraph",
+        "from": 0,
+        "to": 1,
+        "children": [
+          {
+            "from": 0,
+            "to": 1,
+            "text": "a"
+          }
+        ]
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "text": "\n\n"
+      },
+      {
+        "type": "Paragraph",
+        "from": 3,
+        "to": 4,
+        "children": [
+          {
+            "from": 3,
+            "to": 4,
+            "text": "b"
+          }
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "text": "\n"
+      }
+    ]
+  },
+  "---\ntags:\n  - \"a: b\"\n---\n#foo\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 30,
+    "children": [
+      {
+        "type": "FrontMatter",
+        "from": 0,
+        "to": 24,
+        "children": [
+          {
+            "type": "FrontMatterMarker",
+            "from": 0,
+            "to": 4,
+            "children": [
+              {
+                "from": 0,
+                "to": 4,
+                "text": "---\n"
+              }
+            ]
+          },
+          {
+            "type": "FrontMatterCode",
+            "from": 4,
+            "to": 21,
+            "children": [
+              {
+                "type": "Document",
+                "from": 4,
+                "to": 21,
+                "children": [
+                  {
+                    "type": "atom",
+                    "from": 4,
+                    "to": 8,
+                    "children": [
+                      {
+                        "from": 4,
+                        "to": 8,
+                        "text": "tags"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "meta",
+                    "from": 8,
+                    "to": 9,
+                    "children": [
+                      {
+                        "from": 8,
+                        "to": 9,
+                        "text": ":"
+                      }
+                    ]
+                  },
+                  {
+                    "from": 9,
+                    "to": 10,
+                    "text": "\n"
+                  },
+                  {
+                    "type": "meta",
+                    "from": 10,
+                    "to": 14,
+                    "children": [
+                      {
+                        "from": 10,
+                        "to": 14,
+                        "text": "  - "
+                      }
+                    ]
+                  },
+                  {
+                    "type": "string",
+                    "from": 14,
+                    "to": 20,
+                    "children": [
+                      {
+                        "from": 14,
+                        "to": 20,
+                        "text": "\"a: b\""
+                      }
+                    ]
+                  },
+                  {
+                    "from": 20,
+                    "to": 21,
+                    "text": "\n"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "FrontMatterMarker",
+            "from": 21,
+            "to": 24,
+            "children": [
+              {
+                "from": 21,
+                "to": 24,
+                "text": "---"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 24,
+        "to": 25,
+        "text": "\n"
+      },
+      {
+        "type": "Paragraph",
+        "from": 25,
+        "to": 29,
+        "children": [
+          {
+            "type": "Hashtag",
+            "from": 25,
+            "to": 29,
+            "children": [
+              {
+                "from": 25,
+                "to": 29,
+                "text": "#foo"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 29,
+        "to": 30,
+        "text": "\n"
+      }
+    ]
+  },
+  "---\ntags:\n  - 'a: b'\n  - foo\n---\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 33,
+    "children": [
+      {
+        "type": "FrontMatter",
+        "from": 0,
+        "to": 32,
+        "children": [
+          {
+            "type": "FrontMatterMarker",
+            "from": 0,
+            "to": 4,
+            "children": [
+              {
+                "from": 0,
+                "to": 4,
+                "text": "---\n"
+              }
+            ]
+          },
+          {
+            "type": "FrontMatterCode",
+            "from": 4,
+            "to": 29,
+            "children": [
+              {
+                "type": "Document",
+                "from": 4,
+                "to": 29,
+                "children": [
+                  {
+                    "type": "atom",
+                    "from": 4,
+                    "to": 8,
+                    "children": [
+                      {
+                        "from": 4,
+                        "to": 8,
+                        "text": "tags"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "meta",
+                    "from": 8,
+                    "to": 9,
+                    "children": [
+                      {
+                        "from": 8,
+                        "to": 9,
+                        "text": ":"
+                      }
+                    ]
+                  },
+                  {
+                    "from": 9,
+                    "to": 10,
+                    "text": "\n"
+                  },
+                  {
+                    "type": "meta",
+                    "from": 10,
+                    "to": 14,
+                    "children": [
+                      {
+                        "from": 10,
+                        "to": 14,
+                        "text": "  - "
+                      }
+                    ]
+                  },
+                  {
+                    "type": "string",
+                    "from": 14,
+                    "to": 20,
+                    "children": [
+                      {
+                        "from": 14,
+                        "to": 20,
+                        "text": "'a: b'"
+                      }
+                    ]
+                  },
+                  {
+                    "from": 20,
+                    "to": 21,
+                    "text": "\n"
+                  },
+                  {
+                    "type": "meta",
+                    "from": 21,
+                    "to": 25,
+                    "children": [
+                      {
+                        "from": 21,
+                        "to": 25,
+                        "text": "  - "
+                      }
+                    ]
+                  },
+                  {
+                    "from": 25,
+                    "to": 29,
+                    "text": "foo\n"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "FrontMatterMarker",
+            "from": 29,
+            "to": 32,
+            "children": [
+              {
+                "from": 29,
+                "to": 32,
+                "text": "---"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 32,
+        "to": 33,
+        "text": "\n"
+      }
+    ]
+  },
+  "---\ntags: [\"a b\"]\n---\n#foo\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 27,
+    "children": [
+      {
+        "type": "FrontMatter",
+        "from": 0,
+        "to": 21,
+        "children": [
+          {
+            "type": "FrontMatterMarker",
+            "from": 0,
+            "to": 4,
+            "children": [
+              {
+                "from": 0,
+                "to": 4,
+                "text": "---\n"
+              }
+            ]
+          },
+          {
+            "type": "FrontMatterCode",
+            "from": 4,
+            "to": 18,
+            "children": [
+              {
+                "type": "Document",
+                "from": 4,
+                "to": 18,
+                "children": [
+                  {
+                    "type": "atom",
+                    "from": 4,
+                    "to": 8,
+                    "children": [
+                      {
+                        "from": 4,
+                        "to": 8,
+                        "text": "tags"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "meta",
+                    "from": 8,
+                    "to": 11,
+                    "children": [
+                      {
+                        "from": 8,
+                        "to": 11,
+                        "text": ": ["
+                      }
+                    ]
+                  },
+                  {
+                    "type": "string",
+                    "from": 11,
+                    "to": 16,
+                    "children": [
+                      {
+                        "from": 11,
+                        "to": 16,
+                        "text": "\"a b\""
+                      }
+                    ]
+                  },
+                  {
+                    "type": "meta",
+                    "from": 16,
+                    "to": 17,
+                    "children": [
+                      {
+                        "from": 16,
+                        "to": 17,
+                        "text": "]"
+                      }
+                    ]
+                  },
+                  {
+                    "from": 17,
+                    "to": 18,
+                    "text": "\n"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "FrontMatterMarker",
+            "from": 18,
+            "to": 21,
+            "children": [
+              {
+                "from": 18,
+                "to": 21,
+                "text": "---"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 21,
+        "to": 22,
+        "text": "\n"
+      },
+      {
+        "type": "Paragraph",
+        "from": 22,
+        "to": 26,
+        "children": [
+          {
+            "type": "Hashtag",
+            "from": 22,
+            "to": 26,
+            "children": [
+              {
+                "from": 22,
+                "to": 26,
+                "text": "#foo"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 26,
+        "to": 27,
+        "text": "\n"
+      }
+    ]
+  },
+  "---\ntags:\n  - a b\n  - foo\n---\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 30,
+    "children": [
+      {
+        "type": "FrontMatter",
+        "from": 0,
+        "to": 29,
+        "children": [
+          {
+            "type": "FrontMatterMarker",
+            "from": 0,
+            "to": 4,
+            "children": [
+              {
+                "from": 0,
+                "to": 4,
+                "text": "---\n"
+              }
+            ]
+          },
+          {
+            "type": "FrontMatterCode",
+            "from": 4,
+            "to": 26,
+            "children": [
+              {
+                "type": "Document",
+                "from": 4,
+                "to": 26,
+                "children": [
+                  {
+                    "type": "atom",
+                    "from": 4,
+                    "to": 8,
+                    "children": [
+                      {
+                        "from": 4,
+                        "to": 8,
+                        "text": "tags"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "meta",
+                    "from": 8,
+                    "to": 9,
+                    "children": [
+                      {
+                        "from": 8,
+                        "to": 9,
+                        "text": ":"
+                      }
+                    ]
+                  },
+                  {
+                    "from": 9,
+                    "to": 10,
+                    "text": "\n"
+                  },
+                  {
+                    "type": "meta",
+                    "from": 10,
+                    "to": 14,
+                    "children": [
+                      {
+                        "from": 10,
+                        "to": 14,
+                        "text": "  - "
+                      }
+                    ]
+                  },
+                  {
+                    "from": 14,
+                    "to": 18,
+                    "text": "a b\n"
+                  },
+                  {
+                    "type": "meta",
+                    "from": 18,
+                    "to": 22,
+                    "children": [
+                      {
+                        "from": 18,
+                        "to": 22,
+                        "text": "  - "
+                      }
+                    ]
+                  },
+                  {
+                    "from": 22,
+                    "to": 26,
+                    "text": "foo\n"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "FrontMatterMarker",
+            "from": 26,
+            "to": 29,
+            "children": [
+              {
+                "from": 26,
+                "to": 29,
+                "text": "---"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 29,
+        "to": 30,
+        "text": "\n"
+      }
+    ]
+  },
+  "---\ntags: foo\n---\n> #quote\n\n* #list\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 36,
+    "children": [
+      {
+        "type": "FrontMatter",
+        "from": 0,
+        "to": 17,
+        "children": [
+          {
+            "type": "FrontMatterMarker",
+            "from": 0,
+            "to": 4,
+            "children": [
+              {
+                "from": 0,
+                "to": 4,
+                "text": "---\n"
+              }
+            ]
+          },
+          {
+            "type": "FrontMatterCode",
+            "from": 4,
+            "to": 14,
+            "children": [
+              {
+                "type": "Document",
+                "from": 4,
+                "to": 14,
+                "children": [
+                  {
+                    "type": "atom",
+                    "from": 4,
+                    "to": 8,
+                    "children": [
+                      {
+                        "from": 4,
+                        "to": 8,
+                        "text": "tags"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "meta",
+                    "from": 8,
+                    "to": 10,
+                    "children": [
+                      {
+                        "from": 8,
+                        "to": 10,
+                        "text": ": "
+                      }
+                    ]
+                  },
+                  {
+                    "from": 10,
+                    "to": 14,
+                    "text": "foo\n"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "FrontMatterMarker",
+            "from": 14,
+            "to": 17,
+            "children": [
+              {
+                "from": 14,
+                "to": 17,
+                "text": "---"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 17,
+        "to": 18,
+        "text": "\n"
+      },
+      {
+        "type": "Blockquote",
+        "from": 18,
+        "to": 26,
+        "children": [
+          {
+            "type": "QuoteMark",
+            "from": 18,
+            "to": 19,
+            "children": [
+              {
+                "from": 18,
+                "to": 19,
+                "text": ">"
+              }
+            ]
+          },
+          {
+            "from": 19,
+            "to": 20,
+            "text": " "
+          },
+          {
+            "type": "Paragraph",
+            "from": 20,
+            "to": 26,
+            "children": [
+              {
+                "type": "Hashtag",
+                "from": 20,
+                "to": 26,
+                "children": [
+                  {
+                    "from": 20,
+                    "to": 26,
+                    "text": "#quote"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 26,
+        "to": 28,
+        "text": "\n\n"
+      },
+      {
+        "type": "BulletList",
+        "from": 28,
+        "to": 35,
+        "children": [
+          {
+            "type": "ListItem",
+            "from": 28,
+            "to": 35,
+            "children": [
+              {
+                "type": "ListMark",
+                "from": 28,
+                "to": 29,
+                "children": [
+                  {
+                    "from": 28,
+                    "to": 29,
+                    "text": "*"
+                  }
+                ]
+              },
+              {
+                "from": 29,
+                "to": 30,
+                "text": " "
+              },
+              {
+                "type": "Paragraph",
+                "from": 30,
+                "to": 35,
+                "children": [
+                  {
+                    "type": "Hashtag",
+                    "from": 30,
+                    "to": 35,
+                    "children": [
+                      {
+                        "from": 30,
+                        "to": 35,
+                        "text": "#list"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 35,
+        "to": 36,
+        "text": "\n"
+      }
+    ]
+  },
+  "| a | | c |\n| :--- | ---: | :---: |\n| b | | d |\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 48,
+    "children": [
+      {
+        "type": "Table",
+        "from": 0,
+        "to": 47,
+        "children": [
+          {
+            "type": "TableHeader",
+            "from": 0,
+            "to": 11,
+            "children": [
+              {
+                "type": "TableDelimiter",
+                "from": 0,
+                "to": 1,
+                "children": [
+                  {
+                    "from": 0,
+                    "to": 1,
+                    "text": "|"
+                  }
+                ]
+              },
+              {
+                "from": 1,
+                "to": 2,
+                "text": " "
+              },
+              {
+                "type": "TableCell",
+                "from": 2,
+                "to": 3,
+                "children": [
+                  {
+                    "from": 2,
+                    "to": 3,
+                    "text": "a"
+                  }
+                ]
+              },
+              {
+                "from": 3,
+                "to": 4,
+                "text": " "
+              },
+              {
+                "type": "TableDelimiter",
+                "from": 4,
+                "to": 5,
+                "children": [
+                  {
+                    "from": 4,
+                    "to": 5,
+                    "text": "|"
+                  }
+                ]
+              },
+              {
+                "from": 5,
+                "to": 6,
+                "text": " "
+              },
+              {
+                "type": "TableDelimiter",
+                "from": 6,
+                "to": 7,
+                "children": [
+                  {
+                    "from": 6,
+                    "to": 7,
+                    "text": "|"
+                  }
+                ]
+              },
+              {
+                "from": 7,
+                "to": 8,
+                "text": " "
+              },
+              {
+                "type": "TableCell",
+                "from": 8,
+                "to": 9,
+                "children": [
+                  {
+                    "from": 8,
+                    "to": 9,
+                    "text": "c"
+                  }
+                ]
+              },
+              {
+                "from": 9,
+                "to": 10,
+                "text": " "
+              },
+              {
+                "type": "TableDelimiter",
+                "from": 10,
+                "to": 11,
+                "children": [
+                  {
+                    "from": 10,
+                    "to": 11,
+                    "text": "|"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 11,
+            "to": 12,
+            "text": "\n"
+          },
+          {
+            "type": "TableDelimiter",
+            "from": 12,
+            "to": 35,
+            "children": [
+              {
+                "from": 12,
+                "to": 35,
+                "text": "| :--- | ---: | :---: |"
+              }
+            ]
+          },
+          {
+            "from": 35,
+            "to": 36,
+            "text": "\n"
+          },
+          {
+            "type": "TableRow",
+            "from": 36,
+            "to": 47,
+            "children": [
+              {
+                "type": "TableDelimiter",
+                "from": 36,
+                "to": 37,
+                "children": [
+                  {
+                    "from": 36,
+                    "to": 37,
+                    "text": "|"
+                  }
+                ]
+              },
+              {
+                "from": 37,
+                "to": 38,
+                "text": " "
+              },
+              {
+                "type": "TableCell",
+                "from": 38,
+                "to": 39,
+                "children": [
+                  {
+                    "from": 38,
+                    "to": 39,
+                    "text": "b"
+                  }
+                ]
+              },
+              {
+                "from": 39,
+                "to": 40,
+                "text": " "
+              },
+              {
+                "type": "TableDelimiter",
+                "from": 40,
+                "to": 41,
+                "children": [
+                  {
+                    "from": 40,
+                    "to": 41,
+                    "text": "|"
+                  }
+                ]
+              },
+              {
+                "from": 41,
+                "to": 42,
+                "text": " "
+              },
+              {
+                "type": "TableDelimiter",
+                "from": 42,
+                "to": 43,
+                "children": [
+                  {
+                    "from": 42,
+                    "to": 43,
+                    "text": "|"
+                  }
+                ]
+              },
+              {
+                "from": 43,
+                "to": 44,
+                "text": " "
+              },
+              {
+                "type": "TableCell",
+                "from": 44,
+                "to": 45,
+                "children": [
+                  {
+                    "from": 44,
+                    "to": 45,
+                    "text": "d"
+                  }
+                ]
+              },
+              {
+                "from": 45,
+                "to": 46,
+                "text": " "
+              },
+              {
+                "type": "TableDelimiter",
+                "from": 46,
+                "to": 47,
+                "children": [
+                  {
+                    "from": 46,
+                    "to": 47,
+                    "text": "|"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 47,
+        "to": 48,
+        "text": "\n"
+      }
+    ]
+  },
+  "| a  |    | c   |\n|:---|---:|:---:|\n| b  |    | d   |\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 54,
+    "children": [
+      {
+        "type": "Table",
+        "from": 0,
+        "to": 53,
+        "children": [
+          {
+            "type": "TableHeader",
+            "from": 0,
+            "to": 17,
+            "children": [
+              {
+                "type": "TableDelimiter",
+                "from": 0,
+                "to": 1,
+                "children": [
+                  {
+                    "from": 0,
+                    "to": 1,
+                    "text": "|"
+                  }
+                ]
+              },
+              {
+                "from": 1,
+                "to": 2,
+                "text": " "
+              },
+              {
+                "type": "TableCell",
+                "from": 2,
+                "to": 3,
+                "children": [
+                  {
+                    "from": 2,
+                    "to": 3,
+                    "text": "a"
+                  }
+                ]
+              },
+              {
+                "from": 3,
+                "to": 5,
+                "text": "  "
+              },
+              {
+                "type": "TableDelimiter",
+                "from": 5,
+                "to": 6,
+                "children": [
+                  {
+                    "from": 5,
+                    "to": 6,
+                    "text": "|"
+                  }
+                ]
+              },
+              {
+                "from": 6,
+                "to": 10,
+                "text": "    "
+              },
+              {
+                "type": "TableDelimiter",
+                "from": 10,
+                "to": 11,
+                "children": [
+                  {
+                    "from": 10,
+                    "to": 11,
+                    "text": "|"
+                  }
+                ]
+              },
+              {
+                "from": 11,
+                "to": 12,
+                "text": " "
+              },
+              {
+                "type": "TableCell",
+                "from": 12,
+                "to": 13,
+                "children": [
+                  {
+                    "from": 12,
+                    "to": 13,
+                    "text": "c"
+                  }
+                ]
+              },
+              {
+                "from": 13,
+                "to": 16,
+                "text": "   "
+              },
+              {
+                "type": "TableDelimiter",
+                "from": 16,
+                "to": 17,
+                "children": [
+                  {
+                    "from": 16,
+                    "to": 17,
+                    "text": "|"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 17,
+            "to": 18,
+            "text": "\n"
+          },
+          {
+            "type": "TableDelimiter",
+            "from": 18,
+            "to": 35,
+            "children": [
+              {
+                "from": 18,
+                "to": 35,
+                "text": "|:---|---:|:---:|"
+              }
+            ]
+          },
+          {
+            "from": 35,
+            "to": 36,
+            "text": "\n"
+          },
+          {
+            "type": "TableRow",
+            "from": 36,
+            "to": 53,
+            "children": [
+              {
+                "type": "TableDelimiter",
+                "from": 36,
+                "to": 37,
+                "children": [
+                  {
+                    "from": 36,
+                    "to": 37,
+                    "text": "|"
+                  }
+                ]
+              },
+              {
+                "from": 37,
+                "to": 38,
+                "text": " "
+              },
+              {
+                "type": "TableCell",
+                "from": 38,
+                "to": 39,
+                "children": [
+                  {
+                    "from": 38,
+                    "to": 39,
+                    "text": "b"
+                  }
+                ]
+              },
+              {
+                "from": 39,
+                "to": 41,
+                "text": "  "
+              },
+              {
+                "type": "TableDelimiter",
+                "from": 41,
+                "to": 42,
+                "children": [
+                  {
+                    "from": 41,
+                    "to": 42,
+                    "text": "|"
+                  }
+                ]
+              },
+              {
+                "from": 42,
+                "to": 46,
+                "text": "    "
+              },
+              {
+                "type": "TableDelimiter",
+                "from": 46,
+                "to": 47,
+                "children": [
+                  {
+                    "from": 46,
+                    "to": 47,
+                    "text": "|"
+                  }
+                ]
+              },
+              {
+                "from": 47,
+                "to": 48,
+                "text": " "
+              },
+              {
+                "type": "TableCell",
+                "from": 48,
+                "to": 49,
+                "children": [
+                  {
+                    "from": 48,
+                    "to": 49,
+                    "text": "d"
+                  }
+                ]
+              },
+              {
+                "from": 49,
+                "to": 52,
+                "text": "   "
+              },
+              {
+                "type": "TableDelimiter",
+                "from": 52,
+                "to": 53,
+                "children": [
+                  {
+                    "from": 52,
+                    "to": 53,
+                    "text": "|"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 53,
+        "to": 54,
+        "text": "\n"
+      }
+    ]
+  },
+  "| code | x |\n| --- | --- |\n| `a   b` | y |\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 43,
+    "children": [
+      {
+        "type": "Table",
+        "from": 0,
+        "to": 42,
+        "children": [
+          {
+            "type": "TableHeader",
+            "from": 0,
+            "to": 12,
+            "children": [
+              {
+                "type": "TableDelimiter",
+                "from": 0,
+                "to": 1,
+                "children": [
+                  {
+                    "from": 0,
+                    "to": 1,
+                    "text": "|"
+                  }
+                ]
+              },
+              {
+                "from": 1,
+                "to": 2,
+                "text": " "
+              },
+              {
+                "type": "TableCell",
+                "from": 2,
+                "to": 6,
+                "children": [
+                  {
+                    "from": 2,
+                    "to": 6,
+                    "text": "code"
+                  }
+                ]
+              },
+              {
+                "from": 6,
+                "to": 7,
+                "text": " "
+              },
+              {
+                "type": "TableDelimiter",
+                "from": 7,
+                "to": 8,
+                "children": [
+                  {
+                    "from": 7,
+                    "to": 8,
+                    "text": "|"
+                  }
+                ]
+              },
+              {
+                "from": 8,
+                "to": 9,
+                "text": " "
+              },
+              {
+                "type": "TableCell",
+                "from": 9,
+                "to": 10,
+                "children": [
+                  {
+                    "from": 9,
+                    "to": 10,
+                    "text": "x"
+                  }
+                ]
+              },
+              {
+                "from": 10,
+                "to": 11,
+                "text": " "
+              },
+              {
+                "type": "TableDelimiter",
+                "from": 11,
+                "to": 12,
+                "children": [
+                  {
+                    "from": 11,
+                    "to": 12,
+                    "text": "|"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 12,
+            "to": 13,
+            "text": "\n"
+          },
+          {
+            "type": "TableDelimiter",
+            "from": 13,
+            "to": 26,
+            "children": [
+              {
+                "from": 13,
+                "to": 26,
+                "text": "| --- | --- |"
+              }
+            ]
+          },
+          {
+            "from": 26,
+            "to": 27,
+            "text": "\n"
+          },
+          {
+            "type": "TableRow",
+            "from": 27,
+            "to": 42,
+            "children": [
+              {
+                "type": "TableDelimiter",
+                "from": 27,
+                "to": 28,
+                "children": [
+                  {
+                    "from": 27,
+                    "to": 28,
+                    "text": "|"
+                  }
+                ]
+              },
+              {
+                "from": 28,
+                "to": 29,
+                "text": " "
+              },
+              {
+                "type": "TableCell",
+                "from": 29,
+                "to": 36,
+                "children": [
+                  {
+                    "type": "InlineCode",
+                    "from": 29,
+                    "to": 36,
+                    "children": [
+                      {
+                        "type": "CodeMark",
+                        "from": 29,
+                        "to": 30,
+                        "children": [
+                          {
+                            "from": 29,
+                            "to": 30,
+                            "text": "`"
+                          }
+                        ]
+                      },
+                      {
+                        "from": 30,
+                        "to": 35,
+                        "text": "a   b"
+                      },
+                      {
+                        "type": "CodeMark",
+                        "from": 35,
+                        "to": 36,
+                        "children": [
+                          {
+                            "from": 35,
+                            "to": 36,
+                            "text": "`"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "from": 36,
+                "to": 37,
+                "text": " "
+              },
+              {
+                "type": "TableDelimiter",
+                "from": 37,
+                "to": 38,
+                "children": [
+                  {
+                    "from": 37,
+                    "to": 38,
+                    "text": "|"
+                  }
+                ]
+              },
+              {
+                "from": 38,
+                "to": 39,
+                "text": " "
+              },
+              {
+                "type": "TableCell",
+                "from": 39,
+                "to": 40,
+                "children": [
+                  {
+                    "from": 39,
+                    "to": 40,
+                    "text": "y"
+                  }
+                ]
+              },
+              {
+                "from": 40,
+                "to": 41,
+                "text": " "
+              },
+              {
+                "type": "TableDelimiter",
+                "from": 41,
+                "to": 42,
+                "children": [
+                  {
+                    "from": 41,
+                    "to": 42,
+                    "text": "|"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 42,
+        "to": 43,
+        "text": "\n"
+      }
+    ]
+  },
+  "| code    | x |\n|---------|---|\n| `a   b` | y |\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 48,
+    "children": [
+      {
+        "type": "Table",
+        "from": 0,
+        "to": 47,
+        "children": [
+          {
+            "type": "TableHeader",
+            "from": 0,
+            "to": 15,
+            "children": [
+              {
+                "type": "TableDelimiter",
+                "from": 0,
+                "to": 1,
+                "children": [
+                  {
+                    "from": 0,
+                    "to": 1,
+                    "text": "|"
+                  }
+                ]
+              },
+              {
+                "from": 1,
+                "to": 2,
+                "text": " "
+              },
+              {
+                "type": "TableCell",
+                "from": 2,
+                "to": 6,
+                "children": [
+                  {
+                    "from": 2,
+                    "to": 6,
+                    "text": "code"
+                  }
+                ]
+              },
+              {
+                "from": 6,
+                "to": 10,
+                "text": "    "
+              },
+              {
+                "type": "TableDelimiter",
+                "from": 10,
+                "to": 11,
+                "children": [
+                  {
+                    "from": 10,
+                    "to": 11,
+                    "text": "|"
+                  }
+                ]
+              },
+              {
+                "from": 11,
+                "to": 12,
+                "text": " "
+              },
+              {
+                "type": "TableCell",
+                "from": 12,
+                "to": 13,
+                "children": [
+                  {
+                    "from": 12,
+                    "to": 13,
+                    "text": "x"
+                  }
+                ]
+              },
+              {
+                "from": 13,
+                "to": 14,
+                "text": " "
+              },
+              {
+                "type": "TableDelimiter",
+                "from": 14,
+                "to": 15,
+                "children": [
+                  {
+                    "from": 14,
+                    "to": 15,
+                    "text": "|"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 15,
+            "to": 16,
+            "text": "\n"
+          },
+          {
+            "type": "TableDelimiter",
+            "from": 16,
+            "to": 31,
+            "children": [
+              {
+                "from": 16,
+                "to": 31,
+                "text": "|---------|---|"
+              }
+            ]
+          },
+          {
+            "from": 31,
+            "to": 32,
+            "text": "\n"
+          },
+          {
+            "type": "TableRow",
+            "from": 32,
+            "to": 47,
+            "children": [
+              {
+                "type": "TableDelimiter",
+                "from": 32,
+                "to": 33,
+                "children": [
+                  {
+                    "from": 32,
+                    "to": 33,
+                    "text": "|"
+                  }
+                ]
+              },
+              {
+                "from": 33,
+                "to": 34,
+                "text": " "
+              },
+              {
+                "type": "TableCell",
+                "from": 34,
+                "to": 41,
+                "children": [
+                  {
+                    "type": "InlineCode",
+                    "from": 34,
+                    "to": 41,
+                    "children": [
+                      {
+                        "type": "CodeMark",
+                        "from": 34,
+                        "to": 35,
+                        "children": [
+                          {
+                            "from": 34,
+                            "to": 35,
+                            "text": "`"
+                          }
+                        ]
+                      },
+                      {
+                        "from": 35,
+                        "to": 40,
+                        "text": "a   b"
+                      },
+                      {
+                        "type": "CodeMark",
+                        "from": 40,
+                        "to": 41,
+                        "children": [
+                          {
+                            "from": 40,
+                            "to": 41,
+                            "text": "`"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "from": 41,
+                "to": 42,
+                "text": " "
+              },
+              {
+                "type": "TableDelimiter",
+                "from": 42,
+                "to": 43,
+                "children": [
+                  {
+                    "from": 42,
+                    "to": 43,
+                    "text": "|"
+                  }
+                ]
+              },
+              {
+                "from": 43,
+                "to": 44,
+                "text": " "
+              },
+              {
+                "type": "TableCell",
+                "from": 44,
+                "to": 45,
+                "children": [
+                  {
+                    "from": 44,
+                    "to": 45,
+                    "text": "y"
+                  }
+                ]
+              },
+              {
+                "from": 45,
+                "to": 46,
+                "text": " "
+              },
+              {
+                "type": "TableDelimiter",
+                "from": 46,
+                "to": 47,
+                "children": [
+                  {
+                    "from": 46,
+                    "to": 47,
+                    "text": "|"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 47,
+        "to": 48,
+        "text": "\n"
+      }
+    ]
+  },
+  "## Title\n\n\nbody\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 16,
+    "children": [
+      {
+        "type": "ATXHeading2",
+        "from": 0,
+        "to": 8,
+        "children": [
+          {
+            "type": "HeaderMark",
+            "from": 0,
+            "to": 2,
+            "children": [
+              {
+                "from": 0,
+                "to": 2,
+                "text": "##"
+              }
+            ]
+          },
+          {
+            "from": 2,
+            "to": 8,
+            "text": " Title"
+          }
+        ]
+      },
+      {
+        "from": 8,
+        "to": 11,
+        "text": "\n\n\n"
+      },
+      {
+        "type": "Paragraph",
+        "from": 11,
+        "to": 15,
+        "children": [
+          {
+            "from": 11,
+            "to": 15,
+            "text": "body"
+          }
+        ]
+      },
+      {
+        "from": 15,
+        "to": 16,
+        "text": "\n"
+      }
+    ]
+  },
+  "## Title\nbody\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 14,
+    "children": [
+      {
+        "type": "ATXHeading2",
+        "from": 0,
+        "to": 8,
+        "children": [
+          {
+            "type": "HeaderMark",
+            "from": 0,
+            "to": 2,
+            "children": [
+              {
+                "from": 0,
+                "to": 2,
+                "text": "##"
+              }
+            ]
+          },
+          {
+            "from": 2,
+            "to": 8,
+            "text": " Title"
+          }
+        ]
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "text": "\n"
+      },
+      {
+        "type": "Paragraph",
+        "from": 9,
+        "to": 13,
+        "children": [
+          {
+            "from": 9,
+            "to": 13,
+            "text": "body"
+          }
+        ]
+      },
+      {
+        "from": 13,
+        "to": 14,
+        "text": "\n"
+      }
+    ]
+  },
+  "~~~\ncode\n\n\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 11,
+    "children": [
+      {
+        "type": "FencedCode",
+        "from": 0,
+        "to": 11,
+        "children": [
+          {
+            "type": "CodeMark",
+            "from": 0,
+            "to": 3,
+            "children": [
+              {
+                "from": 0,
+                "to": 3,
+                "text": "~~~"
+              }
+            ]
+          },
+          {
+            "from": 3,
+            "to": 4,
+            "text": "\n"
+          },
+          {
+            "type": "CodeText",
+            "from": 4,
+            "to": 11,
+            "children": [
+              {
+                "from": 4,
+                "to": 11,
+                "text": "code\n\n\n"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "*a\nb*\n===\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 10,
+    "children": [
+      {
+        "type": "SetextHeading1",
+        "from": 0,
+        "to": 9,
+        "children": [
+          {
+            "type": "Emphasis",
+            "from": 0,
+            "to": 5,
+            "children": [
+              {
+                "type": "EmphasisMark",
+                "from": 0,
+                "to": 1,
+                "children": [
+                  {
+                    "from": 0,
+                    "to": 1,
+                    "text": "*"
+                  }
+                ]
+              },
+              {
+                "from": 1,
+                "to": 4,
+                "text": "a\nb"
+              },
+              {
+                "type": "EmphasisMark",
+                "from": 4,
+                "to": 5,
+                "children": [
+                  {
+                    "from": 4,
+                    "to": 5,
+                    "text": "*"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 5,
+            "to": 6,
+            "text": "\n"
+          },
+          {
+            "type": "HeaderMark",
+            "from": 6,
+            "to": 9,
+            "children": [
+              {
+                "from": 6,
+                "to": 9,
+                "text": "==="
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "text": "\n"
+      }
+    ]
+  },
+  "# *a b*\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 8,
+    "children": [
+      {
+        "type": "ATXHeading1",
+        "from": 0,
+        "to": 7,
+        "children": [
+          {
+            "type": "HeaderMark",
+            "from": 0,
+            "to": 1,
+            "children": [
+              {
+                "from": 0,
+                "to": 1,
+                "text": "#"
+              }
+            ]
+          },
+          {
+            "from": 1,
+            "to": 2,
+            "text": " "
+          },
+          {
+            "type": "Emphasis",
+            "from": 2,
+            "to": 7,
+            "children": [
+              {
+                "type": "EmphasisMark",
+                "from": 2,
+                "to": 3,
+                "children": [
+                  {
+                    "from": 2,
+                    "to": 3,
+                    "text": "*"
+                  }
+                ]
+              },
+              {
+                "from": 3,
+                "to": 6,
+                "text": "a b"
+              },
+              {
+                "type": "EmphasisMark",
+                "from": 6,
+                "to": 7,
+                "children": [
+                  {
+                    "from": 6,
+                    "to": 7,
+                    "text": "*"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "text": "\n"
+      }
+    ]
+  },
+  "`a\nb`\n===\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 10,
+    "children": [
+      {
+        "type": "SetextHeading1",
+        "from": 0,
+        "to": 9,
+        "children": [
+          {
+            "type": "InlineCode",
+            "from": 0,
+            "to": 5,
+            "children": [
+              {
+                "type": "CodeMark",
+                "from": 0,
+                "to": 1,
+                "children": [
+                  {
+                    "from": 0,
+                    "to": 1,
+                    "text": "`"
+                  }
+                ]
+              },
+              {
+                "from": 1,
+                "to": 4,
+                "text": "a\nb"
+              },
+              {
+                "type": "CodeMark",
+                "from": 4,
+                "to": 5,
+                "children": [
+                  {
+                    "from": 4,
+                    "to": 5,
+                    "text": "`"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 5,
+            "to": 6,
+            "text": "\n"
+          },
+          {
+            "type": "HeaderMark",
+            "from": 6,
+            "to": 9,
+            "children": [
+              {
+                "from": 6,
+                "to": 9,
+                "text": "==="
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "text": "\n"
+      }
+    ]
+  },
+  "---\ntags: []\n---\n**a** #foo **b**\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 34,
+    "children": [
+      {
+        "type": "FrontMatter",
+        "from": 0,
+        "to": 16,
+        "children": [
+          {
+            "type": "FrontMatterMarker",
+            "from": 0,
+            "to": 4,
+            "children": [
+              {
+                "from": 0,
+                "to": 4,
+                "text": "---\n"
+              }
+            ]
+          },
+          {
+            "type": "FrontMatterCode",
+            "from": 4,
+            "to": 13,
+            "children": [
+              {
+                "type": "Document",
+                "from": 4,
+                "to": 13,
+                "children": [
+                  {
+                    "type": "atom",
+                    "from": 4,
+                    "to": 8,
+                    "children": [
+                      {
+                        "from": 4,
+                        "to": 8,
+                        "text": "tags"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "meta",
+                    "from": 8,
+                    "to": 12,
+                    "children": [
+                      {
+                        "from": 8,
+                        "to": 12,
+                        "text": ": []"
+                      }
+                    ]
+                  },
+                  {
+                    "from": 12,
+                    "to": 13,
+                    "text": "\n"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "FrontMatterMarker",
+            "from": 13,
+            "to": 16,
+            "children": [
+              {
+                "from": 13,
+                "to": 16,
+                "text": "---"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 16,
+        "to": 17,
+        "text": "\n"
+      },
+      {
+        "type": "Paragraph",
+        "from": 17,
+        "to": 33,
+        "children": [
+          {
+            "type": "StrongEmphasis",
+            "from": 17,
+            "to": 22,
+            "children": [
+              {
+                "type": "EmphasisMark",
+                "from": 17,
+                "to": 19,
+                "children": [
+                  {
+                    "from": 17,
+                    "to": 19,
+                    "text": "**"
+                  }
+                ]
+              },
+              {
+                "from": 19,
+                "to": 20,
+                "text": "a"
+              },
+              {
+                "type": "EmphasisMark",
+                "from": 20,
+                "to": 22,
+                "children": [
+                  {
+                    "from": 20,
+                    "to": 22,
+                    "text": "**"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 22,
+            "to": 23,
+            "text": " "
+          },
+          {
+            "type": "Hashtag",
+            "from": 23,
+            "to": 27,
+            "children": [
+              {
+                "from": 23,
+                "to": 27,
+                "text": "#foo"
+              }
+            ]
+          },
+          {
+            "from": 27,
+            "to": 28,
+            "text": " "
+          },
+          {
+            "type": "StrongEmphasis",
+            "from": 28,
+            "to": 33,
+            "children": [
+              {
+                "type": "EmphasisMark",
+                "from": 28,
+                "to": 30,
+                "children": [
+                  {
+                    "from": 28,
+                    "to": 30,
+                    "text": "**"
+                  }
+                ]
+              },
+              {
+                "from": 30,
+                "to": 31,
+                "text": "b"
+              },
+              {
+                "type": "EmphasisMark",
+                "from": 31,
+                "to": 33,
+                "children": [
+                  {
+                    "from": 31,
+                    "to": 33,
+                    "text": "**"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 33,
+        "to": 34,
+        "text": "\n"
+      }
+    ]
+  },
+  "---\ntags:\n  - foo\n---\n**a** **b**\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 34,
+    "children": [
+      {
+        "type": "FrontMatter",
+        "from": 0,
+        "to": 21,
+        "children": [
+          {
+            "type": "FrontMatterMarker",
+            "from": 0,
+            "to": 4,
+            "children": [
+              {
+                "from": 0,
+                "to": 4,
+                "text": "---\n"
+              }
+            ]
+          },
+          {
+            "type": "FrontMatterCode",
+            "from": 4,
+            "to": 18,
+            "children": [
+              {
+                "type": "Document",
+                "from": 4,
+                "to": 18,
+                "children": [
+                  {
+                    "type": "atom",
+                    "from": 4,
+                    "to": 8,
+                    "children": [
+                      {
+                        "from": 4,
+                        "to": 8,
+                        "text": "tags"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "meta",
+                    "from": 8,
+                    "to": 9,
+                    "children": [
+                      {
+                        "from": 8,
+                        "to": 9,
+                        "text": ":"
+                      }
+                    ]
+                  },
+                  {
+                    "from": 9,
+                    "to": 10,
+                    "text": "\n"
+                  },
+                  {
+                    "type": "meta",
+                    "from": 10,
+                    "to": 14,
+                    "children": [
+                      {
+                        "from": 10,
+                        "to": 14,
+                        "text": "  - "
+                      }
+                    ]
+                  },
+                  {
+                    "from": 14,
+                    "to": 18,
+                    "text": "foo\n"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "FrontMatterMarker",
+            "from": 18,
+            "to": 21,
+            "children": [
+              {
+                "from": 18,
+                "to": 21,
+                "text": "---"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 21,
+        "to": 22,
+        "text": "\n"
+      },
+      {
+        "type": "Paragraph",
+        "from": 22,
+        "to": 33,
+        "children": [
+          {
+            "type": "StrongEmphasis",
+            "from": 22,
+            "to": 27,
+            "children": [
+              {
+                "type": "EmphasisMark",
+                "from": 22,
+                "to": 24,
+                "children": [
+                  {
+                    "from": 22,
+                    "to": 24,
+                    "text": "**"
+                  }
+                ]
+              },
+              {
+                "from": 24,
+                "to": 25,
+                "text": "a"
+              },
+              {
+                "type": "EmphasisMark",
+                "from": 25,
+                "to": 27,
+                "children": [
+                  {
+                    "from": 25,
+                    "to": 27,
+                    "text": "**"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 27,
+            "to": 28,
+            "text": " "
+          },
+          {
+            "type": "StrongEmphasis",
+            "from": 28,
+            "to": 33,
+            "children": [
+              {
+                "type": "EmphasisMark",
+                "from": 28,
+                "to": 30,
+                "children": [
+                  {
+                    "from": 28,
+                    "to": 30,
+                    "text": "**"
+                  }
+                ]
+              },
+              {
+                "from": 30,
+                "to": 31,
+                "text": "b"
+              },
+              {
+                "type": "EmphasisMark",
+                "from": 31,
+                "to": 33,
+                "children": [
+                  {
+                    "from": 31,
+                    "to": 33,
+                    "text": "**"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 33,
+        "to": 34,
+        "text": "\n"
+      }
+    ]
+  },
+  "~~~\nfoo": {
+    "type": "Document",
+    "from": 0,
+    "to": 7,
+    "children": [
+      {
+        "type": "FencedCode",
+        "from": 0,
+        "to": 7,
+        "children": [
+          {
+            "type": "CodeMark",
+            "from": 0,
+            "to": 3,
+            "children": [
+              {
+                "from": 0,
+                "to": 3,
+                "text": "~~~"
+              }
+            ]
+          },
+          {
+            "from": 3,
+            "to": 4,
+            "text": "\n"
+          },
+          {
+            "type": "CodeText",
+            "from": 4,
+            "to": 7,
+            "children": [
+              {
+                "from": 4,
+                "to": 7,
+                "text": "foo"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "foo #\n===\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 10,
+    "children": [
+      {
+        "type": "SetextHeading1",
+        "from": 0,
+        "to": 9,
+        "children": [
+          {
+            "from": 0,
+            "to": 6,
+            "text": "foo #\n"
+          },
+          {
+            "type": "HeaderMark",
+            "from": 6,
+            "to": 9,
+            "children": [
+              {
+                "from": 6,
+                "to": 9,
+                "text": "==="
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "text": "\n"
+      }
+    ]
+  }
+}

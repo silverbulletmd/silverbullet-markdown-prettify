@@ -1,6 +1,7 @@
+import { renderToText } from "@silverbulletmd/silverbullet/lib/tree";
 import type { ParseTree } from "@silverbulletmd/silverbullet/lib/tree";
-import { skipOpaque } from "../pipeline.ts";
-import type { PrettifyConfig, Scope } from "../pipeline.ts";
+import { endsInOpaqueBlock, replaceEditableText, skipOpaque } from "../tree.ts";
+import type { PrettifyConfig, Scope } from "../config.ts";
 
 // Work on parser gaps so heading-like text and blank lines in opaque blocks
 // are not mistaken for document structure.
@@ -69,64 +70,26 @@ function rewriteSoftWraps(s: string, preserveTrailingNewline: boolean): string {
   return out + (endsWithNewline ? "\n" : "");
 }
 
-export function finalizeWhitespace(text: string, cfg: PrettifyConfig): string {
-  const lines = text.split("\n");
-  let inFence = false;
-  const out: string[] = [];
-  for (const line of lines) {
-    const isFenceLine = /^`{3,}[^`]*$/.test(line.trim());
-    if (isFenceLine) {
-      // Fence lines themselves are passed through unchanged.
-      out.push(line);
-      inFence = !inFence;
-      continue;
-    }
-    if (inFence) {
-      // Inside fence — don't trim.
-      out.push(line);
-      continue;
-    }
-    if (cfg.trimTrailingWhitespace) {
-      out.push(line.endsWith("  ") && /[^ \t]  $/.test(line)
-        ? line
-        : line.replace(/[ \t]+$/, ""));
-    } else {
-      out.push(line);
-    }
+// Whitespace policy uses the parser's protection boundaries, including hard
+// breaks. No second Markdown/fence parser runs after rendering.
+export function finalizeWhitespace(tree: ParseTree, cfg: PrettifyConfig, scope: Scope): void {
+  if (cfg.trimTrailingWhitespace) {
+    replaceEditableText(tree, /[ \t]+(?=\r?$)/gm, (match, text) => {
+      const before = text[match.index! - 1];
+      const after = text.slice(match.index! + match[0].length);
+      const hardBreak = /^ {2,}$/.test(match[0]) && before !== undefined &&
+        before !== "\n" && before !== "\r" && /^\r?\n/.test(after);
+      return hardBreak ? match[0] : "";
+    });
   }
-  let result = out.join("\n");
   if (cfg.collapseBlankLines) {
-    // Collapse runs of 3+ blank lines, but only OUTSIDE fences.
-    result = collapseOutsideFences(result);
+    replaceEditableText(tree, /(?:\r?\n){3,}/g, () => "\n\n");
   }
-  if (cfg.ensureTrailingNewline) {
-    result = result.replace(/\n+$/, "") + "\n";
-  }
-  return result;
-}
-
-function collapseOutsideFences(s: string): string {
-  const lines = s.split("\n");
-  let inFence = false;
-  const segments: { fence: boolean; content: string[] }[] = [
-    { fence: false, content: [] },
-  ];
-  for (const line of lines) {
-    const isFenceLine = /^`{3,}[^`]*$/.test(line.trim());
-    if (isFenceLine) {
-      // Push fence line onto its own segment (as-is, don't collapse).
-      segments.push({ fence: true, content: [line] });
-      inFence = !inFence;
-      segments.push({ fence: inFence, content: [] });
-      continue;
+  if (scope === "page" && cfg.ensureTrailingNewline) {
+    replaceEditableText(tree, /\n+$/g, () => "\n");
+    if (!renderToText(tree).endsWith("\n") && !endsInOpaqueBlock(tree)) {
+      tree.children ??= [];
+      tree.children.push({ text: "\n" });
     }
-    segments[segments.length - 1].content.push(line);
   }
-  return segments
-    .map((seg) => {
-      if (seg.fence) return seg.content.join("\n");
-      const joined = seg.content.join("\n");
-      return joined.replace(/\n{3,}/g, "\n\n");
-    })
-    .join("\n");
 }

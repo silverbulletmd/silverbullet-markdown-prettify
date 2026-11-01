@@ -1,43 +1,26 @@
-import type { ParseTree } from "@silverbulletmd/silverbullet/lib/tree";
-import { replaceNodesMatching } from "@silverbulletmd/silverbullet/lib/tree";
-import { OPAQUE_TYPES } from "../pipeline.ts";
+import type { ParseTree } from '@silverbulletmd/silverbullet/lib/tree';
+import { replaceEditableText, skipOpaque, textLeaves } from '../tree.ts';
 
 export function normalizeHeadings(tree: ParseTree): void {
-  replaceNodesMatching(tree, (n) => {
-    if (n.type && OPAQUE_TYPES.has(n.type)) {
-      // Don't descend
-      return n;
-    }
-    if (n.type !== "SetextHeading1" && n.type !== "SetextHeading2") return;
-    const level = n.type === "SetextHeading1" ? 1 : 2;
-    const inlineParts: string[] = [];
-    for (const child of n.children ?? []) {
-      if (child.type === "HeaderMark") continue;
-      if (child.text !== undefined) {
-        const cleaned = child.text.replace(/\n+/g, " ").trim();
-        if (cleaned) inlineParts.push(cleaned);
-      } else {
-        const rendered = renderInline(child);
-        if (rendered) inlineParts.push(rendered);
-      }
-    }
-    const content = inlineParts.join(" ").replace(/\s+/g, " ").trim();
-    const prefix = "#".repeat(level);
-    return {
-      type: `ATXHeading${level}`,
-      children: [
-        { type: "HeaderMark", children: [{ text: prefix }] },
-        { text: ` ${content}` },
-      ],
-    };
+  skipOpaque(tree, node => {
+    if (node.type !== 'SetextHeading1' && node.type !== 'SetextHeading2') return;
+    // ATX headings cannot contain a protected multiline span. Keep setext
+    // syntax when conversion would change code or hard-break content.
+    if (textLeaves(node).some(leaf => leaf.opaque && leaf.node.text!.includes('\n'))) return;
+    const level = node.type === 'SetextHeading1' ? 1 : 2;
+    const children = (node.children ?? []).filter(child => child.type !== 'HeaderMark');
+    // The newline before the underline is heading syntax, not inline content.
+    const last = children[children.length - 1];
+    // A literal trailing hash run would become an ATX closing marker.
+    if (last?.text && /(?:^|\s)#+\s*$/.test(last.text)) return;
+    if (last?.text !== undefined) last.text = last.text.replace(/[ \t]*\r?\n[ \t]*$/, '');
+    node.children = children;
+    replaceEditableText(node, /\r?\n/g, () => ' ');
+    node.type = `ATXHeading${level}`;
+    node.children = [
+      { type: 'HeaderMark', children: [{ text: '#'.repeat(level) }] },
+      { text: ' ' },
+      ...children,
+    ];
   });
-}
-
-// Render inline children of a heading back to text, preserving their markup.
-function renderInline(n: ParseTree): string {
-  if (n.text !== undefined) return n.text;
-  if (!n.children) return "";
-  let out = "";
-  for (const child of n.children) out += renderInline(child);
-  return out;
 }

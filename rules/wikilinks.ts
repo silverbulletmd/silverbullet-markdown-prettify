@@ -1,5 +1,5 @@
 import type { ParseTree } from "@silverbulletmd/silverbullet/lib/tree";
-import { skipOpaque } from "../pipeline.ts";
+import { skipOpaque } from "../tree.ts";
 
 export function normalizeWikilinks(tree: ParseTree): void {
   skipOpaque(tree, (n) => {

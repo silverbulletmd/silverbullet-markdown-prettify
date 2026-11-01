@@ -2,7 +2,7 @@ import { describe, expect, test } from "vitest";
 import type { ParseTree } from "@silverbulletmd/silverbullet/lib/tree";
 import { renderToText } from "@silverbulletmd/silverbullet/lib/tree";
 import { finalizeWhitespace, normalizeBlankLines, unwrapSoftWrappedParagraphs } from "./whitespace.ts";
-import { DEFAULT_CONFIG } from "../pipeline.ts";
+import { DEFAULT_CONFIG } from "../config.ts";
 
 describe("normalizeBlankLines", () => {
   test.each([
@@ -56,41 +56,47 @@ describe("normalizeBlankLines", () => {
 });
 
 describe("finalizeWhitespace", () => {
-  test("trims trailing whitespace on each line", () => {
-    expect(finalizeWhitespace("hello   \nworld\n", DEFAULT_CONFIG))
-      .toBe("hello\nworld\n");
+  function finalizeText(text: string, cfg = DEFAULT_CONFIG): string {
+    const tree: ParseTree = { children: [{ text }] };
+    finalizeWhitespace(tree, cfg, "page");
+    return renderToText(tree);
+  }
+
+  test("trims trailing tabs while preserving hard breaks of two or more spaces", () => {
+    expect(finalizeText("hello\t\nworld   \nnext  \nend\t"))
+      .toBe("hello\nworld   \nnext  \nend\n");
   });
 
-  test("collapses 3+ blank lines to one", () => {
-    expect(finalizeWhitespace("a\n\n\n\nb\n", DEFAULT_CONFIG))
-      .toBe("a\n\nb\n");
-  });
-
-  test("ensures exactly one trailing newline", () => {
-    expect(finalizeWhitespace("abc", DEFAULT_CONFIG)).toBe("abc\n");
-    expect(finalizeWhitespace("abc\n\n\n", DEFAULT_CONFIG)).toBe("abc\n");
+  test("collapses interior blank lines and ensures one page newline", () => {
+    expect(finalizeText("a\n\n\n\nb\n\n\n")).toBe("a\n\nb\n");
+    expect(finalizeText("abc")).toBe("abc\n");
   });
 
   test("respects toggles", () => {
-    const cfg = {
-      ...DEFAULT_CONFIG,
-      trimTrailingWhitespace: false,
-      collapseBlankLines: false,
-      ensureTrailingNewline: false,
-    };
-    expect(finalizeWhitespace("a   \n\n\n\nb", cfg)).toBe("a   \n\n\n\nb");
+    const cfg = { ...DEFAULT_CONFIG, trimTrailingWhitespace: false,
+      collapseBlankLines: false, ensureTrailingNewline: false };
+    expect(finalizeText("a\t\n\n\n\nb", cfg)).toBe("a\t\n\n\n\nb");
   });
 
-  test("preserves trailing two-space hard breaks", () => {
-    const src = "line one  \nline two\n";
-    expect(finalizeWhitespace(src, DEFAULT_CONFIG)).toBe(src);
+  test("handles whitespace split between leaves using rendered line context", () => {
+    const tree: ParseTree = { children: [
+      { text: "a " }, { text: "  " }, { text: "\nb\t" }, { text: "\n\n" }, { text: "\n\nc" },
+    ] };
+    finalizeWhitespace(tree, DEFAULT_CONFIG, "page");
+    expect(renderToText(tree)).toBe("a   \nb\n\nc\n");
   });
 
-  test("does not touch trailing whitespace inside fenced code blocks", () => {
-    const src = "before   \n```\nkeep   me   \nintact   \n```\nafter   \n";
-    const expected = "before\n```\nkeep   me   \nintact   \n```\nafter\n";
-    expect(finalizeWhitespace(src, DEFAULT_CONFIG)).toBe(expected);
-  });
+  test.each(["FencedCode", "CodeBlock", "InlineCode", "FrontMatter", "HTMLBlock", "Blockquote", "MathBlock"])(
+    "never edits whitespace in %s", type => {
+      const tree: ParseTree = { children: [
+        { text: "before\t\n" },
+        { type, children: [{ text: "keep\t\n\n\n\nintact\t" }] },
+        { text: "\nafter\t\n" },
+      ] };
+      finalizeWhitespace(tree, DEFAULT_CONFIG, "page");
+      expect(renderToText(tree)).toBe("before\nkeep\t\n\n\n\nintact\t\nafter\n");
+    },
+  );
 });
 
 describe("unwrapSoftWrappedParagraphs", () => {

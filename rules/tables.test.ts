@@ -2,6 +2,9 @@ import { describe, expect, test } from "vitest";
 import type { ParseTree } from "@silverbulletmd/silverbullet/lib/tree";
 import { renderToText } from "@silverbulletmd/silverbullet/lib/tree";
 import { alignTables } from "./tables.ts";
+import { collapseSpaceRuns } from "./spaceRuns.ts";
+import { normalizeEmphasis } from "./emphasis.ts";
+import { DEFAULT_CONFIG } from "../config.ts";
 
 // Build a minimal ParseTree for a pipe table. Cell text is stored as a
 // single leaf; renderToText concatenates those leaves so the rule sees
@@ -16,7 +19,12 @@ function dataRow(...cells: string[]): ParseTree {
   return { type: "TableRow", children: cells.map(cell) };
 }
 function table(...rows: ParseTree[]): ParseTree {
-  return { type: "Table", children: rows };
+  const columnCount = rows[0].children!.length;
+  return { type: "Table", children: [
+    rows[0], { text: "\n" },
+    { type: "TableDelimiter", children: [{ text: "|" + "---|".repeat(columnCount) }] },
+    ...rows.slice(1).flatMap(row => [{ text: "\n" }, row]),
+  ] };
 }
 
 describe("alignTables", () => {
@@ -78,4 +86,20 @@ describe("alignTables", () => {
 
     expect(out).toBe(expected);
   });
+});
+
+
+test("table layout retains inline syntax for subsequent rules and keeps its padding", () => {
+  const inline: ParseTree = { type: "Emphasis", children: [
+    { type: "EmphasisMark", children: [{ text: "_" }] },
+    { text: "x" },
+    { type: "EmphasisMark", children: [{ text: "_" }] },
+  ] };
+  const heading = headerRow("", "long");
+  heading.children![0].children = [inline];
+  const root: ParseTree = { children: [table(heading, dataRow("long", "y"))] };
+  alignTables(root);
+  normalizeEmphasis(root, DEFAULT_CONFIG, "");
+  collapseSpaceRuns(root);
+  expect(renderToText(root)).toBe("| *x*  | long |\n|------|------|\n| long | y    |");
 });

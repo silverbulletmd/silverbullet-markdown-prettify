@@ -3,7 +3,7 @@ import type { ParseTree } from "@silverbulletmd/silverbullet/lib/tree";
 import { renderToText } from "@silverbulletmd/silverbullet/lib/tree";
 import { collapseSpaceRuns } from "./spaceRuns.ts";
 import { normalizeBullets } from "./bullets.ts";
-import { DEFAULT_CONFIG } from "../pipeline.ts";
+import { DEFAULT_CONFIG } from "../config.ts";
 
 describe("collapseSpaceRuns", () => {
   test("preserves indentation while collapsing spaces in line content", () => {

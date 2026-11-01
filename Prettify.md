@@ -6,25 +6,24 @@ files:
 ---
 Adds a `Markdown: Prettify` command (default binding `Ctrl-Alt-p` / `Cmd-Alt-p`) that cleans up the current page (or selection) using an ordered pipeline of opinionated, ParseTree-based rules:
 
-- Convert setext (`===` / `---`) headings to ATX (`#`)
-- Unwrap soft-wrapped paragraphs (the editor handles wrapping)
-- Normalize bullet markers; renumber ordered lists sequentially (preserving the starting value); `N)` is normalized to `N.`; remove blank lines between list items and before nested lists
-- Normalize emphasis markers (with a mid-word `*` safety override)
-- Trim whitespace inside wikilinks (`[[ Foo | Bar ]]` → `[[Foo|Bar]]`)
-- Align pipe tables to uniform column widths
-- Collapse runs of spaces (outside code), preserving leading indentation
-- Lift page-level hashtags into the frontmatter `tags:` key (only when the page already has a frontmatter block — no frontmatter is created out of thin air)
-- Trim trailing whitespace, collapse 3+ blank lines, remove blank lines below headings and at page boundaries, ensure one trailing newline
+* Convert setext (`===` / `---`) headings to ATX (`#`) when their inline content can be preserved (multiline code and literal closing hashes keep setext syntax)
+* Unwrap soft-wrapped paragraphs (the editor handles wrapping)
+* Normalize bullet markers; renumber ordered lists sequentially (preserving the starting value); `N)` is normalized to `N.`; remove blank lines between list items and before nested lists
+* Normalize emphasis markers (with a mid-word `*` safety override)
+* Trim whitespace inside wikilinks (`[[ Foo | Bar ]]` → `[[Foo|Bar]]`)
+* Align pipe tables to uniform column widths, preserving alignment markers and empty cells
+* Collapse runs of spaces (outside code), preserving leading indentation
+* Lift page-level hashtags into the frontmatter `tags:` key (only when the page already has a frontmatter block — no frontmatter is created out of thin air)
+* Trim trailing whitespace, collapse 3+ blank lines, remove blank lines below headings and at page boundaries, ensure one trailing newline outside protected blocks
 
-Code blocks, inline code, math, HTML, blockquotes, transclusions, and existing frontmatter YAML are left byte-identical (the tag-lift rule is the only touch to frontmatter).
+Parser-recognized code blocks, inline code, math, HTML, blockquotes, transclusions, and Lua directives are protected from edits. Existing frontmatter YAML is untouched unless tags are lifted. Tag lifting preserves tag values using YAML serialization; invalid frontmatter or tag types abort the command before any editor edit. At EOF, preserving a protected block takes precedence over adding a trailing newline.
 
-When a selection is active the command operates on the selection; the tag-lift rule (page-level by definition) is skipped. Otherwise it runs on the full page. A single `replaceRange` call means undo reverts the whole prettification in one step.
+When a selection is active the command operates on the selection, preserves its leading and trailing whitespace, and skips the page-level tag-lift rule. A selection never gains a trailing newline. Otherwise it runs on the full page. A single `replaceRange` call means undo reverts the whole prettification in one step.
 
 ## Configuration
 See the "Markdown Prettify" section in the Configuration Manager.
 
 ## Configuration schema
-
 ```space-lua
 -- priority: 100
 

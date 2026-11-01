@@ -1,6 +1,7 @@
 import { config, editor } from "@silverbulletmd/silverbullet/syscalls";
-import { DEFAULT_CONFIG, runPipeline } from "./pipeline.ts";
-import type { PrettifyConfig, Scope } from "./pipeline.ts";
+import { DEFAULT_CONFIG } from "./config.ts";
+import { runPipeline } from "./pipeline.ts";
+import type { PrettifyConfig, Scope } from "./config.ts";
 
 export async function prettifyCommand(): Promise<void> {
   const raw =

@@ -1,60 +1,53 @@
-import type { ParseTree } from "@silverbulletmd/silverbullet/lib/tree";
-import { renderToText } from "@silverbulletmd/silverbullet/lib/tree";
-import { skipOpaque } from "../pipeline.ts";
+import type { ParseTree } from '@silverbulletmd/silverbullet/lib/tree';
+import { normalizeTableRow, renderToText } from '@silverbulletmd/silverbullet/lib/tree';
+import { replaceEditableText, skipOpaque } from '../tree.ts';
 
 export function alignTables(tree: ParseTree): void {
-  skipOpaque(tree, (n) => {
-    if (n.type !== "Table") return;
-    alignOneTable(n);
+  skipOpaque(tree, node => {
+    if (node.type === 'Table') alignOneTable(node);
   });
 }
 
-function alignOneTable(table: ParseTree) {
-  // Collect header + data rows (not the separator TableDelimiter at Table level)
-  const rows = collectDataRows(table);
-  if (rows.length === 0) return;
-
-  const cellsByRow = rows.map((r) => cellsOfRow(r));
-  const columnCount = Math.max(...cellsByRow.map((c) => c.length));
-
-  // Compute max content length per column (no minimum enforced here)
-  const widths = new Array(columnCount).fill(0);
-  for (const row of cellsByRow) {
-    for (let i = 0; i < row.length; i++) {
-      widths[i] = Math.max(widths[i], row[i].length);
+function alignOneTable(table: ParseTree): void {
+  const rows = (table.children ?? []).filter(node =>
+    node.type === 'TableHeader' || node.type === 'TableRow');
+  if (!rows.length) return;
+  const separator = table.children?.find(node => node.type === 'TableDelimiter');
+  if (!separator) return;
+  const alignments = renderToText(separator).trim().replace(/^\||\|$/g, '').split('|').map(cell => ({
+      left: cell.trim().startsWith(':'), right: cell.trim().endsWith(':'),
+    }));
+  const leadingPipe = rows[0].children?.[0]?.type === 'TableDelimiter';
+  // The parser omits empty cells. Its canonical normalizer restores them
+  // before widths or padding are calculated.
+  for (const row of rows) normalizeTableRow(row, alignments.length, leadingPipe);
+  const cellsByRow = rows.map(row => (row.children ?? []).filter(node => node.type === 'TableCell'));
+  const columnCount = Math.max(alignments.length, ...cellsByRow.map(cells => cells.length));
+  const widths = Array.from({ length: columnCount }, (_, i) =>
+    1 + Number(alignments[i]?.left ?? false) + Number(alignments[i]?.right ?? false));
+  for (const cells of cellsByRow) {
+    for (let i = 0; i < cells.length; i++) {
+      replaceEditableText(cells[i], /^\s+|\s+$/g, () => '');
+      widths[i] = Math.max(widths[i], renderToText(cells[i]).length);
     }
   }
-
-  // Rebuild formatted rows
-  const formattedRows = cellsByRow.map((cells) => {
-    const padded = widths.map((w, i) => (cells[i] ?? "").padEnd(w));
-    return "| " + padded.join(" | ") + " |";
-  });
-
-  // Build separator line: "-".repeat(w + 2) per column
-  const separatorLine = "|" + widths.map((w) => "-".repeat(w + 2)).join("|") + "|";
-
-  // Build the final text: header, separator, data rows
-  const headerLine = formattedRows[0];
-  const dataLines = formattedRows.slice(1);
-  const trailingNewline = renderToText(table).endsWith("\n") ? "\n" : "";
-  const allLines = [headerLine, separatorLine, ...dataLines];
-  table.children = [{ text: allLines.join("\n") + trailingNewline }];
+  for (let r = 0; r < rows.length; r++) {
+    const children: ParseTree[] = [delimiter('|')];
+    for (let i = 0; i < columnCount; i++) {
+      const cell = cellsByRow[r][i] ?? { type: 'TableCell', children: [] };
+      children.push({ text: ' ' }, cell,
+        { text: ' '.repeat(widths[i] - renderToText(cell).length + 1) }, delimiter('|'));
+    }
+    rows[r].children = children;
+  }
+  const separatorText = '|' + widths.map((width, i) => {
+    const left = alignments[i]?.left ? ':' : '';
+    const right = alignments[i]?.right ? ':' : '';
+    return left + '-'.repeat(width + 2 - left.length - right.length) + right;
+  }).join('|') + '|';
+  separator.children = [{ text: separatorText }];
 }
 
-/** Returns only TableHeader and TableRow nodes (not the separator TableDelimiter). */
-function collectDataRows(table: ParseTree): ParseTree[] {
-  const rows: ParseTree[] = [];
-  for (const c of table.children ?? []) {
-    if (c.type === "TableHeader" || c.type === "TableRow") rows.push(c);
-  }
-  return rows;
-}
-
-function cellsOfRow(row: ParseTree): string[] {
-  const cells: string[] = [];
-  for (const c of row.children ?? []) {
-    if (c.type === "TableCell") cells.push(renderToText(c).trim());
-  }
-  return cells;
+function delimiter(text: string): ParseTree {
+  return { type: 'TableDelimiter', children: [{ text }] };
 }

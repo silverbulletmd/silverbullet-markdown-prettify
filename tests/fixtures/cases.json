@@ -1,0 +1,156 @@
+[
+  {
+    "name": "tilde fences preserve bytes",
+    "source": "before   words\n\n~~~\nkeep   \n\n\n\nend\n~~~\n",
+    "expected": "before words\n\n~~~\nkeep   \n\n\n\nend\n~~~\n"
+  },
+  {
+    "name": "long fences preserve shorter internal fences",
+    "source": "````\n```\nkeep   \n\n\n\n````\n",
+    "expected": "````\n```\nkeep   \n\n\n\n````\n"
+  },
+  {
+    "name": "indented code preserves bytes",
+    "source": "    code   \n\n\n    more\n",
+    "expected": "    code   \n\n\n    more\n"
+  },
+  {
+    "name": "frontmatter literal preserves blank lines",
+    "source": "---\nvalue: |\n  a\n\n\n  b\n---\n",
+    "expected": "---\nvalue: |\n  a\n\n\n  b\n---\n"
+  },
+  {
+    "name": "HTML block preserves bytes",
+    "source": "<pre>\nkeep   \n\n\n\n</pre>\n",
+    "expected": "<pre>\nkeep   \n\n\n\n</pre>\n"
+  },
+  {
+    "name": "blockquote preserves trailing whitespace",
+    "source": "> keep   \n> next\n",
+    "expected": "> keep   \n> next\n"
+  },
+  {
+    "name": "multiline inline code preserves bytes",
+    "source": "text `a   \nb` end\n",
+    "expected": "text `a   \nb` end\n"
+  },
+  {
+    "name": "long hard breaks survive every pass",
+    "source": "line   \nnext\n",
+    "expected": "line   \nnext\n"
+  },
+  {
+    "name": "setext keeps adjacent inline nodes",
+    "source": "a*bold*c `x   y`\n===\n",
+    "expected": "# a*bold*c `x   y`\n"
+  },
+  {
+    "name": "setext inline rules compose",
+    "source": "__bold__ [[ Foo | Bar ]]\n---\n",
+    "expected": "## **bold** [[Foo|Bar]]\n"
+  },
+  {
+    "name": "setext tags remain visible",
+    "source": "---\ntitle: Hello\n---\nTitle #foo\n===\n",
+    "expected": "---\ntitle: Hello\ntags: foo\n---\n# Title\n"
+  },
+  {
+    "name": "transclusions and directives preserve bytes",
+    "source": "![[ Foo ]] ${a   + b}\n",
+    "expected": "![[ Foo ]] ${a   + b}\n"
+  },
+  {
+    "name": "selection does not gain newline",
+    "source": "word",
+    "expected": "word",
+    "scope": "selection"
+  },
+  {
+    "name": "selection preserves boundary whitespace",
+    "source": "\n\n hello   word  \n\n",
+    "expected": "\n\n hello word  \n\n",
+    "scope": "selection"
+  },
+  {
+    "name": "whitespace only selection unchanged",
+    "source": " \n\n\t ",
+    "expected": " \n\n\t ",
+    "scope": "selection"
+  },
+  {
+    "name": "selection keeps tags",
+    "source": "---\ntags: foo\n---\n#bar",
+    "expected": "---\ntags: foo\n---\n#bar",
+    "scope": "selection"
+  },
+  {
+    "name": "page boundaries normalize",
+    "source": "\n\nhello\n\n\n",
+    "expected": "hello\n"
+  },
+  {
+    "name": "interior whitespace normalizes",
+    "source": "a\n\n\n\nb\t\n",
+    "expected": "a\n\nb\n"
+  },
+  {
+    "name": "tag list quotes scalars",
+    "source": "---\ntags:\n  - \"a: b\"\n---\n#foo\n",
+    "expected": "---\ntags:\n  - 'a: b'\n  - foo\n---\n"
+  },
+  {
+    "name": "flow tags preserve word boundaries",
+    "source": "---\ntags: [\"a b\"]\n---\n#foo\n",
+    "expected": "---\ntags:\n  - a b\n  - foo\n---\n"
+  },
+  {
+    "name": "excluded tags with frontmatter",
+    "source": "---\ntags: foo\n---\n> #quote\n\n* #list\n",
+    "expected": "---\ntags: foo\n---\n> #quote\n\n* #list\n"
+  },
+  {
+    "name": "table retains alignment and empty cells",
+    "source": "| a | | c |\n| :--- | ---: | :---: |\n| b | | d |\n",
+    "expected": "| a  |    | c   |\n|:---|---:|:---:|\n| b  |    | d   |\n"
+  },
+  {
+    "name": "table inline code stays opaque",
+    "source": "| code | x |\n| --- | --- |\n| `a   b` | y |\n",
+    "expected": "| code    | x |\n|---------|---|\n| `a   b` | y |\n"
+  },
+  {
+    "name": "heading blank lines removed",
+    "source": "## Title\n\n\nbody\n",
+    "expected": "## Title\nbody\n"
+  },
+  {
+    "name": "unclosed code keeps final blank lines",
+    "source": "~~~\ncode\n\n\n",
+    "expected": "~~~\ncode\n\n\n"
+  },
+  {
+    "name": "multiline emphasis stays within heading",
+    "source": "*a\nb*\n===\n",
+    "expected": "# *a b*\n"
+  },
+  {
+    "name": "multiline protected inline code keeps setext form",
+    "source": "`a\nb`\n===\n",
+    "expected": "`a\nb`\n===\n"
+  },
+  {
+    "name": "tag removal separates surrounding inline content",
+    "source": "---\ntags: []\n---\n**a** #foo **b**\n",
+    "expected": "---\ntags:\n  - foo\n---\n**a** **b**\n"
+  },
+  {
+    "name": "unclosed fence at EOF remains byte identical",
+    "source": "~~~\nfoo",
+    "expected": "~~~\nfoo"
+  },
+  {
+    "name": "setext literal closing hashes remain visible",
+    "source": "foo #\n===\n",
+    "expected": "foo #\n===\n"
+  }
+]

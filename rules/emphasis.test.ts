@@ -2,7 +2,7 @@ import { describe, expect, test } from "vitest";
 import type { ParseTree } from "@silverbulletmd/silverbullet/lib/tree";
 import { renderToText } from "@silverbulletmd/silverbullet/lib/tree";
 import { normalizeEmphasis } from "./emphasis.ts";
-import { DEFAULT_CONFIG } from "../pipeline.ts";
+import { DEFAULT_CONFIG } from "../config.ts";
 
 function emphasisMark(text: string): ParseTree {
   return { type: "EmphasisMark", children: [{ text }] };

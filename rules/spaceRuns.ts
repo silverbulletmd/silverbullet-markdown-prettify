@@ -1,5 +1,5 @@
 import type { ParseTree } from "@silverbulletmd/silverbullet/lib/tree";
-import { OPAQUE_TYPES } from "../pipeline.ts";
+import { OPAQUE_TYPES } from "../tree.ts";
 
 export function collapseSpaceRuns(tree: ParseTree): void {
   // Indentation can be split across gap nodes. Track the rendered line position
@@ -29,7 +29,12 @@ export function collapseSpaceRuns(tree: ParseTree): void {
       if (!opaque) node.text = result;
       return;
     }
-    for (const child of node.children ?? []) walk(child, opaque);
+    const tableRow = node.type === "TableHeader" || node.type === "TableRow";
+    for (const child of node.children ?? []) {
+      // Row gaps are layout padding, not cell content. Keeping cells as nodes
+      // makes this independent of whether table alignment has already run.
+      walk(child, opaque || (tableRow && child.type !== "TableCell"));
+    }
   }
 
   walk(tree);

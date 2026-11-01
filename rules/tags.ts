@@ -1,13 +1,11 @@
 import type { ParseTree } from "@silverbulletmd/silverbullet/lib/tree";
 import {
-  addParentPointers,
-  collectNodesOfType,
   findNodeOfType,
-  findParentMatching,
   renderToText,
 } from "@silverbulletmd/silverbullet/lib/tree";
 import { extractHashtag } from "@silverbulletmd/silverbullet/lib/tags";
 import YAML from "js-yaml";
+import { OPAQUE_TYPES } from "../tree.ts";
 
 const NON_PAGE_ANCESTOR_TYPES = new Set([
   "BulletList",
@@ -24,18 +22,21 @@ export function liftPageTagsToFrontmatter(tree: ParseTree): void {
   const fm = findNodeOfType(tree, "FrontMatter");
   if (!fm) return;
 
-  addParentPointers(tree);
+  const codeNode = findNodeOfType(fm, "FrontMatterCode");
+  if (!codeNode) return;
   const pageHashtags: ParseTree[] = [];
-  for (const h of collectNodesOfType(tree, "Hashtag")) {
-    const ancestor = findParentMatching(h, (p) =>
-      p.type !== undefined && NON_PAGE_ANCESTOR_TYPES.has(p.type!)
-    );
-    if (ancestor) continue;
-    pageHashtags.push(h);
+  function collect(node: ParseTree): void {
+    if (node.type && (OPAQUE_TYPES.has(node.type) || NON_PAGE_ANCESTOR_TYPES.has(node.type))) return;
+    if (node.type === "Hashtag") pageHashtags.push(node);
+    else for (const child of node.children ?? []) collect(child);
   }
+  collect(tree);
   if (pageHashtags.length === 0) return;
 
-  const names = pageHashtags.map((h) => extractHashtag(h.children![0].text!));
+  const names = pageHashtags.map(h => extractHashtag(renderToText(h)));
+  // Validate and serialize first: a malformed mapping or tag value must not
+  // leave the body half edited, even when this rule is called independently.
+  const serialized = mergeTags(renderToText(codeNode), names);
 
   // Remove the hashtag nodes. For each removal, also normalize whitespace in
   // the surrounding sibling text nodes so we don't leave double-spaces or a
@@ -47,7 +48,7 @@ export function liftPageTagsToFrontmatter(tree: ParseTree): void {
   // the paragraph is left empty — strip it and the surrounding separator text.
   pruneEmptyParagraphs(tree);
 
-  mergeTagsIntoExistingFrontmatter(fm, names);
+  codeNode.children = [{ text: serialized }];
 }
 
 function removePageHashtags(tree: ParseTree, targets: Set<ParseTree>): void {
@@ -63,7 +64,9 @@ function removePageHashtags(tree: ParseTree, targets: Set<ParseTree>): void {
       if (prev && prev.text !== undefined && next && next.text !== undefined) {
         const left = prev.text.replace(/ +$/, "");
         const right = next.text.replace(/^ +/, "");
-        const sep = left && right ? " " : "";
+        const hasLeftContent = left.length > 0 || i > 1;
+        const hasRightContent = right.length > 0 || i + 2 < tree.children.length;
+        const sep = hasLeftContent && hasRightContent ? " " : "";
         prev.text = left + sep + right;
         tree.children.splice(i, 2);
         i -= 1;
@@ -104,8 +107,6 @@ function pruneEmptyParagraphs(tree: ParseTree): void {
       }
       tree.children.splice(i, 1);
       i -= 1;
-    } else {
-      pruneEmptyParagraphs(child);
     }
   }
 }
@@ -117,49 +118,25 @@ function isParagraphEmpty(para: ParseTree): boolean {
   );
 }
 
-function mergeTagsIntoExistingFrontmatter(fm: ParseTree, names: string[]) {
-  const codeNode = findNodeOfType(fm, "FrontMatterCode");
-  if (!codeNode) return;
-  const yamlText = renderToText(codeNode);
-  const parsed = (YAML.load(yamlText) ?? {}) as Record<string, any>;
-  const existing = normalizeTags(parsed.tags);
-  const merged = dedupe([...existing, ...names]);
-  parsed.tags = merged;
-  const serialized = serializePreservingForm(yamlText, parsed, merged);
-  codeNode.children = [{ text: serialized }];
-}
-
-function normalizeTags(v: unknown): string[] {
-  if (Array.isArray(v)) return v.map((x) => String(x));
-  if (typeof v === "string") return v.trim().split(/\s+/).filter(Boolean);
-  return [];
-}
-
-function dedupe(xs: string[]): string[] {
-  const seen = new Set<string>();
-  const out: string[] = [];
-  for (const x of xs) {
-    if (!seen.has(x)) {
-      seen.add(x);
-      out.push(x);
-    }
+function mergeTags(yamlText: string, names: string[]): string {
+  const parsed: unknown = YAML.load(yamlText) ?? {};
+  if (typeof parsed !== "object" || parsed === null || Array.isArray(parsed) ||
+    (Object.getPrototypeOf(parsed) !== Object.prototype && Object.getPrototypeOf(parsed) !== null)) {
+    throw new Error("Frontmatter must be a YAML mapping");
   }
-  return out;
+  const { tags, ...rest } = parsed as Record<string, unknown>;
+  const existing = normalizeTags(tags);
+  const merged = [...new Set([...existing, ...names])];
+  // Keep string-form tags when whitespace cannot make their boundaries
+  // ambiguous. Existing arrays stay arrays, including flow-style arrays.
+  const value = Array.isArray(tags) || merged.some(tag => /\s/.test(tag))
+    ? merged : merged.join(" ");
+  return YAML.dump({ ...rest, tags: value }, { lineWidth: -1 });
 }
 
-function serializePreservingForm(
-  originalYaml: string,
-  parsed: Record<string, any>,
-  mergedTags: string[],
-): string {
-  const originalUsedList = /^tags\s*:\s*\n\s+-\s/m.test(originalYaml);
-  const { tags: _omit, ...rest } = parsed;
-  const restYaml = Object.keys(rest).length === 0
-    ? ""
-    : YAML.dump(rest).trimEnd() + "\n";
-  const tagsYaml = originalUsedList
-    ? "tags:\n" + mergedTags.map((t) => `  - ${t}`).join("\n") + "\n"
-    : `tags: ${mergedTags.join(" ")}\n`;
-  // Always emit `tags:` at the end of the frontmatter block.
-  return restYaml + tagsYaml;
+function normalizeTags(value: unknown): string[] {
+  if (value === undefined || value === null) return [];
+  if (typeof value === "string") return value.trim().split(/\s+/).filter(Boolean);
+  if (Array.isArray(value) && value.every(tag => typeof tag === "string")) return value;
+  throw new Error("Frontmatter tags must be a string or a list of strings");
 }

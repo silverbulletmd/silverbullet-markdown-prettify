@@ -2,7 +2,7 @@ import { describe, expect, test } from "vitest";
 import type { ParseTree } from "@silverbulletmd/silverbullet/lib/tree";
 import { renderToText } from "@silverbulletmd/silverbullet/lib/tree";
 import { normalizeBullets } from "./bullets.ts";
-import { DEFAULT_CONFIG } from "../pipeline.ts";
+import { DEFAULT_CONFIG } from "../config.ts";
 
 function listMark(text: string): ParseTree {
   return { type: "ListMark", children: [{ text }] };

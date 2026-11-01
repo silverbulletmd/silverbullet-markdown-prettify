@@ -77,12 +77,11 @@ describe("liftPageTagsToFrontmatter", () => {
       type: "Blockquote",
       children: [para],
     };
-    const root: ParseTree = { children: [blockquote] };
+    const root: ParseTree = { children: [frontmatter("tags: foo\n"), blockquote] };
     liftPageTagsToFrontmatter(root);
     const out = renderToText(root);
-    // No frontmatter should be created since the hashtag was not lifted
-    expect(out).not.toContain("---");
-    expect(out).not.toContain("tags:");
+    expect(out).toContain("#notlifted");
+    expect(out).toContain("tags: foo\n");
   });
 
   test("tags: is placed at the end of the frontmatter block", () => {
@@ -119,10 +118,30 @@ describe("liftPageTagsToFrontmatter", () => {
       type: "BulletList",
       children: [listItem],
     };
-    const root: ParseTree = { children: [list] };
+    const root: ParseTree = { children: [frontmatter("tags: foo\n"), list] };
     liftPageTagsToFrontmatter(root);
     const out = renderToText(root);
-    expect(out).not.toContain("---");
-    expect(out).not.toContain("tags:");
+    expect(out).toContain("#listitem");
+    expect(out).toContain("tags: foo\n");
   });
+});
+
+test.each(['[one, two]\n', '42\n', 'tags: {bad: value}\n', 'tags: [foo, {bad: value}]\n', 'tags: [\n'])(
+  'invalid frontmatter is rejected before any tags are removed: %s', yaml => {
+    const root: ParseTree = { children: [frontmatter(yaml),
+      { type: 'Paragraph', children: [hashtag('foo')] }] };
+    const before = renderToText(root);
+    expect(() => liftPageTagsToFrontmatter(root)).toThrow();
+    expect(renderToText(root)).toBe(before);
+  },
+);
+
+test('missing frontmatter code leaves body tags intact', () => {
+  const root: ParseTree = { children: [
+    { type: 'FrontMatter', children: [{ text: '---\n---\n' }] },
+    { type: 'Paragraph', children: [hashtag('foo')] },
+  ] };
+  const before = renderToText(root);
+  liftPageTagsToFrontmatter(root);
+  expect(renderToText(root)).toBe(before);
 });
