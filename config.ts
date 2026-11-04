@@ -6,6 +6,7 @@ export type PrettifyConfig = {
   normalizeEmphasis: boolean;
   emphasisMarker: "*" | "_";
   strongMarker: "*" | "_";
+  smartQuotes: boolean;
   collapseSpaceRuns: boolean;
   normalizeWikilinks: boolean;
   alignTables: boolean;
@@ -23,6 +24,7 @@ export const DEFAULT_CONFIG: PrettifyConfig = {
   normalizeEmphasis: true,
   emphasisMarker: "*",
   strongMarker: "*",
+  smartQuotes: true,
   collapseSpaceRuns: true,
   normalizeWikilinks: true,
   alignTables: true,

@@ -152,5 +152,20 @@
     "name": "setext literal closing hashes remain visible",
     "source": "foo #\n===\n",
     "expected": "foo #\n===\n"
+  },
+  {
+    "name": "smart quotes in prose by default",
+    "source": "\"Hello,\" she said. 'Hello,' he replied. Don't stop.\n",
+    "expected": "“Hello,” she said. ‘Hello,’ he replied. Don’t stop.\n"
+  },
+  {
+    "name": "smart quotes preserve protected syntax",
+    "source": "\"Text\" and `\"code\"` and [\"label\"](https://example.com/'path').\n",
+    "expected": "“Text” and `\"code\"` and [“label”](https://example.com/'path').\n"
+  },
+  {
+    "name": "smart quotes across inline emphasis",
+    "source": "\"*Hello*\" and \"**world**\".\n",
+    "expected": "“*Hello*” and “**world**”.\n"
   }
 ]

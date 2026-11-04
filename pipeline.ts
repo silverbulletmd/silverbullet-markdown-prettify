@@ -10,6 +10,7 @@ import { normalizeBullets } from "./rules/bullets.ts";
 import { normalizeEmphasis } from "./rules/emphasis.ts";
 import { normalizeWikilinks } from "./rules/wikilinks.ts";
 import { alignTables } from "./rules/tables.ts";
+import { smartQuotes } from "./rules/smartQuotes.ts";
 import { collapseSpaceRuns } from "./rules/spaceRuns.ts";
 import { liftPageTagsToFrontmatter } from "./rules/tags.ts";
 
@@ -28,6 +29,7 @@ export async function runPipeline(
   if (cfg.normalizeEmphasis) normalizeEmphasis(tree, cfg, source);
   if (cfg.normalizeWikilinks) normalizeWikilinks(tree);
   if (cfg.collapseSpaceRuns) collapseSpaceRuns(tree);
+  if (cfg.smartQuotes) smartQuotes(tree);
   if (cfg.alignTables) alignTables(tree);
   if (scope === "page" && cfg.liftPageTagsToFrontmatter) {
     liftPageTagsToFrontmatter(tree);

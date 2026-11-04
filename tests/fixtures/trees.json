@@ -4428,5 +4428,549 @@
         "text": "\n"
       }
     ]
+  },
+  "\"Hello,\" she said. 'Hello,' he replied. Don't stop.\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 52,
+    "children": [
+      {
+        "type": "Paragraph",
+        "from": 0,
+        "to": 51,
+        "children": [
+          {
+            "from": 0,
+            "to": 51,
+            "text": "\"Hello,\" she said. 'Hello,' he replied. Don't stop."
+          }
+        ]
+      },
+      {
+        "from": 51,
+        "to": 52,
+        "text": "\n"
+      }
+    ]
+  },
+  "“Hello,” she said. ‘Hello,’ he replied. Don’t stop.\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 52,
+    "children": [
+      {
+        "type": "Paragraph",
+        "from": 0,
+        "to": 51,
+        "children": [
+          {
+            "from": 0,
+            "to": 51,
+            "text": "“Hello,” she said. ‘Hello,’ he replied. Don’t stop."
+          }
+        ]
+      },
+      {
+        "from": 51,
+        "to": 52,
+        "text": "\n"
+      }
+    ]
+  },
+  "\"Text\" and `\"code\"` and [\"label\"](https://example.com/'path').\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 63,
+    "children": [
+      {
+        "type": "Paragraph",
+        "from": 0,
+        "to": 62,
+        "children": [
+          {
+            "from": 0,
+            "to": 11,
+            "text": "\"Text\" and "
+          },
+          {
+            "type": "InlineCode",
+            "from": 11,
+            "to": 19,
+            "children": [
+              {
+                "type": "CodeMark",
+                "from": 11,
+                "to": 12,
+                "children": [
+                  {
+                    "from": 11,
+                    "to": 12,
+                    "text": "`"
+                  }
+                ]
+              },
+              {
+                "from": 12,
+                "to": 18,
+                "text": "\"code\""
+              },
+              {
+                "type": "CodeMark",
+                "from": 18,
+                "to": 19,
+                "children": [
+                  {
+                    "from": 18,
+                    "to": 19,
+                    "text": "`"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 19,
+            "to": 24,
+            "text": " and "
+          },
+          {
+            "type": "Link",
+            "from": 24,
+            "to": 61,
+            "children": [
+              {
+                "type": "LinkMark",
+                "from": 24,
+                "to": 25,
+                "children": [
+                  {
+                    "from": 24,
+                    "to": 25,
+                    "text": "["
+                  }
+                ]
+              },
+              {
+                "from": 25,
+                "to": 32,
+                "text": "\"label\""
+              },
+              {
+                "type": "LinkMark",
+                "from": 32,
+                "to": 33,
+                "children": [
+                  {
+                    "from": 32,
+                    "to": 33,
+                    "text": "]"
+                  }
+                ]
+              },
+              {
+                "type": "LinkMark",
+                "from": 33,
+                "to": 34,
+                "children": [
+                  {
+                    "from": 33,
+                    "to": 34,
+                    "text": "("
+                  }
+                ]
+              },
+              {
+                "type": "URL",
+                "from": 34,
+                "to": 60,
+                "children": [
+                  {
+                    "from": 34,
+                    "to": 60,
+                    "text": "https://example.com/'path'"
+                  }
+                ]
+              },
+              {
+                "type": "LinkMark",
+                "from": 60,
+                "to": 61,
+                "children": [
+                  {
+                    "from": 60,
+                    "to": 61,
+                    "text": ")"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 61,
+            "to": 62,
+            "text": "."
+          }
+        ]
+      },
+      {
+        "from": 62,
+        "to": 63,
+        "text": "\n"
+      }
+    ]
+  },
+  "“Text” and `\"code\"` and [“label”](https://example.com/'path').\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 63,
+    "children": [
+      {
+        "type": "Paragraph",
+        "from": 0,
+        "to": 62,
+        "children": [
+          {
+            "from": 0,
+            "to": 11,
+            "text": "“Text” and "
+          },
+          {
+            "type": "InlineCode",
+            "from": 11,
+            "to": 19,
+            "children": [
+              {
+                "type": "CodeMark",
+                "from": 11,
+                "to": 12,
+                "children": [
+                  {
+                    "from": 11,
+                    "to": 12,
+                    "text": "`"
+                  }
+                ]
+              },
+              {
+                "from": 12,
+                "to": 18,
+                "text": "\"code\""
+              },
+              {
+                "type": "CodeMark",
+                "from": 18,
+                "to": 19,
+                "children": [
+                  {
+                    "from": 18,
+                    "to": 19,
+                    "text": "`"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 19,
+            "to": 24,
+            "text": " and "
+          },
+          {
+            "type": "Link",
+            "from": 24,
+            "to": 61,
+            "children": [
+              {
+                "type": "LinkMark",
+                "from": 24,
+                "to": 25,
+                "children": [
+                  {
+                    "from": 24,
+                    "to": 25,
+                    "text": "["
+                  }
+                ]
+              },
+              {
+                "from": 25,
+                "to": 32,
+                "text": "“label”"
+              },
+              {
+                "type": "LinkMark",
+                "from": 32,
+                "to": 33,
+                "children": [
+                  {
+                    "from": 32,
+                    "to": 33,
+                    "text": "]"
+                  }
+                ]
+              },
+              {
+                "type": "LinkMark",
+                "from": 33,
+                "to": 34,
+                "children": [
+                  {
+                    "from": 33,
+                    "to": 34,
+                    "text": "("
+                  }
+                ]
+              },
+              {
+                "type": "URL",
+                "from": 34,
+                "to": 60,
+                "children": [
+                  {
+                    "from": 34,
+                    "to": 60,
+                    "text": "https://example.com/'path'"
+                  }
+                ]
+              },
+              {
+                "type": "LinkMark",
+                "from": 60,
+                "to": 61,
+                "children": [
+                  {
+                    "from": 60,
+                    "to": 61,
+                    "text": ")"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 61,
+            "to": 62,
+            "text": "."
+          }
+        ]
+      },
+      {
+        "from": 62,
+        "to": 63,
+        "text": "\n"
+      }
+    ]
+  },
+  "\"*Hello*\" and \"**world**\".\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 27,
+    "children": [
+      {
+        "type": "Paragraph",
+        "from": 0,
+        "to": 26,
+        "children": [
+          {
+            "from": 0,
+            "to": 1,
+            "text": "\""
+          },
+          {
+            "type": "Emphasis",
+            "from": 1,
+            "to": 8,
+            "children": [
+              {
+                "type": "EmphasisMark",
+                "from": 1,
+                "to": 2,
+                "children": [
+                  {
+                    "from": 1,
+                    "to": 2,
+                    "text": "*"
+                  }
+                ]
+              },
+              {
+                "from": 2,
+                "to": 7,
+                "text": "Hello"
+              },
+              {
+                "type": "EmphasisMark",
+                "from": 7,
+                "to": 8,
+                "children": [
+                  {
+                    "from": 7,
+                    "to": 8,
+                    "text": "*"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 8,
+            "to": 15,
+            "text": "\" and \""
+          },
+          {
+            "type": "StrongEmphasis",
+            "from": 15,
+            "to": 24,
+            "children": [
+              {
+                "type": "EmphasisMark",
+                "from": 15,
+                "to": 17,
+                "children": [
+                  {
+                    "from": 15,
+                    "to": 17,
+                    "text": "**"
+                  }
+                ]
+              },
+              {
+                "from": 17,
+                "to": 22,
+                "text": "world"
+              },
+              {
+                "type": "EmphasisMark",
+                "from": 22,
+                "to": 24,
+                "children": [
+                  {
+                    "from": 22,
+                    "to": 24,
+                    "text": "**"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 24,
+            "to": 26,
+            "text": "\"."
+          }
+        ]
+      },
+      {
+        "from": 26,
+        "to": 27,
+        "text": "\n"
+      }
+    ]
+  },
+  "“*Hello*” and “**world**”.\n": {
+    "type": "Document",
+    "from": 0,
+    "to": 27,
+    "children": [
+      {
+        "type": "Paragraph",
+        "from": 0,
+        "to": 26,
+        "children": [
+          {
+            "from": 0,
+            "to": 1,
+            "text": "“"
+          },
+          {
+            "type": "Emphasis",
+            "from": 1,
+            "to": 8,
+            "children": [
+              {
+                "type": "EmphasisMark",
+                "from": 1,
+                "to": 2,
+                "children": [
+                  {
+                    "from": 1,
+                    "to": 2,
+                    "text": "*"
+                  }
+                ]
+              },
+              {
+                "from": 2,
+                "to": 7,
+                "text": "Hello"
+              },
+              {
+                "type": "EmphasisMark",
+                "from": 7,
+                "to": 8,
+                "children": [
+                  {
+                    "from": 7,
+                    "to": 8,
+                    "text": "*"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 8,
+            "to": 15,
+            "text": "” and “"
+          },
+          {
+            "type": "StrongEmphasis",
+            "from": 15,
+            "to": 24,
+            "children": [
+              {
+                "type": "EmphasisMark",
+                "from": 15,
+                "to": 17,
+                "children": [
+                  {
+                    "from": 15,
+                    "to": 17,
+                    "text": "**"
+                  }
+                ]
+              },
+              {
+                "from": 17,
+                "to": 22,
+                "text": "world"
+              },
+              {
+                "type": "EmphasisMark",
+                "from": 22,
+                "to": 24,
+                "children": [
+                  {
+                    "from": 22,
+                    "to": 24,
+                    "text": "**"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "from": 24,
+            "to": 26,
+            "text": "”."
+          }
+        ]
+      },
+      {
+        "from": 26,
+        "to": 27,
+        "text": "\n"
+      }
+    ]
   }
 }

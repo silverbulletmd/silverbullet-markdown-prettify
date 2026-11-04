@@ -16,3 +16,8 @@ for (const fixture of cases) {
     expect(await runPipeline(output, DEFAULT_CONFIG, scope)).toBe(output);
   });
 }
+
+ test('smart quotes can be disabled', async () => {
+  const source = '\"Hello,\" she said. \'Hello,\' he replied. Don\'t stop.\n';
+  expect(await runPipeline(source, { ...DEFAULT_CONFIG, smartQuotes: false }, 'page')).toBe(source);
+});

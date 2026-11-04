@@ -28,7 +28,7 @@ npm run fixtures -- /path/to/silverbullet-2.6.1-checkout
 npm test
 ```
 
-The checkout must have its dependencies installed. Fixture provenance: SilverBullet tag `2.6.1`, commit `9f54b3a719dc986844dbed11547d56f7f42e9656`. `tests/fixtures/trees.json` is generated; do not edit it by hand.
+The checkout must have its dependencies installed. The smart quote fixtures were captured from the local SilverBullet 2.12.1 parser. Earlier fixture provenance: SilverBullet tag `2.6.1`, commit `9f54b3a719dc986844dbed11547d56f7f42e9656`. `tests/fixtures/trees.json` is generated; do not edit it by hand.
 
 Rules share configuration types in `config.ts` and protected-tree traversal in `tree.ts`. Keep inline syntax nodes intact until final rendering so later rules can still recognize emphasis, links, tags, and table cells.
 
